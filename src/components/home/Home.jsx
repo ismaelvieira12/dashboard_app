@@ -11,7 +11,7 @@ export const Home = () => {
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#ffffff",
+    backgroundColor: "#272727",
     alignItems: "center",
     justifyContent: "flex-start", // Alinha no topo
     padding: 20,
@@ -20,5 +20,6 @@ export const styles = StyleSheet.create({
     color: "#fff",  // Deixa o texto visível no fundo preto
     fontSize: 22,
     fontWeight: "bold",
+    marginTop: 70,
   },
 });
