@@ -17,12 +17,12 @@ export const styles = StyleSheet.create({
 
   imagemInicio: {
     width: "100%",
-    height: 460,
+    height: 300,
     marginTop: 40,
     marginLeft: 10,
     marginRight: 10,
     borderRadius: 20,
-    resizeMode: 'cover', // Mantém a proporção da imagem
+    resizeMode: 'center', // Mantém a proporção da imagem
   },
 
   buttonSingUp: {
@@ -30,8 +30,13 @@ export const styles = StyleSheet.create({
     paddingVertical: 15,
     paddingHorizontal: 60,
     borderRadius: 10,
-    marginTop: 20,
+    marginTop: 30,
     width: "100%",
     alignItems: "center",
+  },
+  textBtn: {
+    color: "#fff",
+    fontSize: 18,
+    fontWeight: "bold",
   },
 });
