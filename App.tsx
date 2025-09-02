@@ -17,9 +17,8 @@ export default function App() {
         <Stack.Screen name="WelcomeScreen" options={{headerShown: false}} component={WelcomeScreen} />
         <Stack.Screen name="LoginScreen" options={{headerShown: false}} component={LoginScreen} />
         <Stack.Screen name="SingUpScreen" options={{headerShown: false}} component={SingUpScreen} />
-
       </Stack.Navigator>
-      <StatusBar style="auto" />
+      <StatusBar style="auto"/>
     </NavigationContainer>
   );
 }
