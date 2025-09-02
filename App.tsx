@@ -10,9 +10,9 @@ const Stack = createStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
+      <Stack.Navigator initialRouteName="WelcomeScreen">
+        <Stack.Screen name="WelcomeScreen" options={{headerShown: false}} component={WelcomeScreen} />
+        <Stack.Screen name="Home" options={{headerShown: false}} component={Home} />
       </Stack.Navigator>
       <StatusBar style="auto" />
     </NavigationContainer>
