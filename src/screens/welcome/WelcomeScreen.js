@@ -11,5 +11,7 @@ export const styles = StyleSheet.create({
     color: "#dbd9d9ff",  // Deixa o texto visível no fundo preto
     fontSize: 32,
     fontWeight: "bold",
+    marginLeft: 10,
+    marginRight: 10,
   },
 });
