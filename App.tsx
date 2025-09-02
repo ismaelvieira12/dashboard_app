@@ -3,7 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { StatusBar } from 'expo-status-bar';
 import { Home } from './src/components/home/Home';
-import { WelcomeScreen } from './';
+import { WelcomeScreen } from './src/screens/WelcomeScreen';
 
 const Stack = createStackNavigator();
 
