@@ -1,6 +1,6 @@
 import { View, Text, Image, TouchableOpacity } from 'react-native'
 import React from 'react';
-import { styles } from '../welcome/WelcomeScreen';
+import { styles } from '../welcome/welcome';
 import { useNavigation } from '@react-navigation/native';
 export  const WelcomeScreen = () => {
   const navigation = useNavigation();
