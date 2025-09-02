@@ -3,9 +3,9 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { StatusBar } from 'expo-status-bar';
 import { Home } from './src/components/home/Home';
-import { WelcomeScreen } from './src/screens/WelcomeScreen';
+import { WelcomeScreen } from './src/screens/welcome/WelcomeScreen';
 import LoginScreen from './src/screens/login/LoginScreen';
-import SingUpScreen from './src/screens/SingUpScreen';
+import SingUpScreen from './src/screens/singUp/SingUpScreen';
 
 const Stack = createStackNavigator();
 
