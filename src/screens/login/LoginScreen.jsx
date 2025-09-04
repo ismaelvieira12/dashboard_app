@@ -14,6 +14,10 @@ export default function LoginScreen() {
       <View style={login.EfeitoFive}></View>
       
       
+
+      <TouchableOpacity style={login.buttonLogin}>
+        <text style={login.textButtonLogin}>Login</text>
+      </TouchableOpacity>
     </View>
 
   )
