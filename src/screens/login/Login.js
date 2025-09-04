@@ -15,8 +15,12 @@ export const login = StyleSheet.create({
     },
 
     textLogin: {
-        color: "#bf4747ff",
-        fontSize: 20,  
+        position: "absolute",
+        zIndex: 3,
+        top: 135,
+        left:40,
+        color: "#fff",
+        fontSize: 34,  
         fontWeight: "bold",
         marginTop: 50,
     },
@@ -29,6 +33,7 @@ export const login = StyleSheet.create({
         position: 'absolute',
         top: -100,
         right: -100,
+        zIndex: 2,
     },
     EfeitoTwo: {
         width: 100,
@@ -38,6 +43,7 @@ export const login = StyleSheet.create({
         position: 'absolute',
         top: 150,
         right: -60,
+        zIndex: 2,
     },
     EfeitoThree: {
         width: 850,
@@ -46,6 +52,7 @@ export const login = StyleSheet.create({
         borderRadius: "50%",
         position: 'absolute',
         bottom: "-65%",
+        zIndex: 2,
     },
     EfeitoFor: {
         width: 250,
@@ -54,16 +61,18 @@ export const login = StyleSheet.create({
         borderRadius: "50%",
         position: 'absolute',
         bottom: -60,
-        right: "-10%"
+        right: "-10%",
+        zIndex: 2,
     },
     EfeitoFive: {
-        width: 250,
-        height: 250,
-        backgroundColor: '#C7F9CC',
+        width: 850,
+        height: 850,
+        backgroundColor: '#1e4f6fd4',
         borderRadius: "50%",
         position: 'absolute',
-        bottom: -60,
-        right: "-10%"
+        top: "-50%",
+        left: "-90%",    
+        zIndex: 1,
     }
 
 });
