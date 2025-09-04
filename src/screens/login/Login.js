@@ -4,7 +4,7 @@ export const login = StyleSheet.create({
         flex: 1,
         justifyContent: "center",
         position: "relative",
-        
+        backgroundColor: "#22577A",
         alignItems: "center",
     },
 
@@ -22,12 +22,22 @@ export const login = StyleSheet.create({
     },
 
     EfeitoOne: {
-        width: 200,
-        height: 200,
-        backgroundColor: '#bf4747ff',
-        borderRadius: 100,
+        width: 300,
+        height: 300,
+        backgroundColor: '#C7F9CC',
+        borderRadius: 200,
         position: 'absolute',
-        top: -50,
+        top: -100,
+        right: -100,
+    },
+    EfeitoTwo: {
+        width: 100,
+        height: 100,
+        backgroundColor: '#C7F9CC',
+        borderRadius: 200,
+        position: 'absolute',
+        top: 150,
+        right: -60,
     }
 
 });
