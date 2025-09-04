@@ -79,7 +79,7 @@ export const login = StyleSheet.create({
         width: "100%",
         height: 300,
         backgroundColor: "#fff",
-        position: "absolute",
+        // position: "absolute",
         zIndex: 3,
         display:"flex",
         justifyContent: "center",
@@ -88,10 +88,10 @@ export const login = StyleSheet.create({
 
     buttonLogin: {
         position: "absolute",
-        bottom: 100,
+        bottom: 20,
         width: "80%",
         marginTop: 20,
-        backgroundColor: "#fff",
+        backgroundColor: "#38A3A5",
         paddingVertical: 15,
         borderRadius: 5,
         zIndex: 3,
@@ -105,7 +105,7 @@ export const login = StyleSheet.create({
         elevation: 5,
     },
     textButtonLogin: {
-        color: "#22577A",
+        color: "#fff",
         fontSize: 19,  
         fontWeight: "bold",
         textAlign: "center",
