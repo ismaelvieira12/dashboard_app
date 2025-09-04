@@ -74,18 +74,31 @@ export const login = StyleSheet.create({
         left: "-90%",    
         zIndex: 1,
     },
+
+    form:{
+     
+    },
+
     buttonLogin: {
         position: "absolute",
         bottom: 100,
         width: "80%",
         marginTop: 20,
-        backgroundColor: "#22577A",
+        backgroundColor: "#fff",
         paddingVertical: 15,
         borderRadius: 5,
         zIndex: 3,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        elevation: 5,
     },
     textButtonLogin: {
-        color: "#fff",
+        color: "#22577A",
         fontSize: 19,  
         fontWeight: "bold",
         textAlign: "center",
