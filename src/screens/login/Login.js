@@ -76,7 +76,14 @@ export const login = StyleSheet.create({
     },
 
     form:{
-     
+        width: "100%",
+        height: 300,
+        backgroundColor: "#fff",
+        position: "absolute",
+        zIndex: 3,
+        display:"flex",
+        justifyContent: "center",
+        alignItems:  "center",
     },
 
     buttonLogin: {

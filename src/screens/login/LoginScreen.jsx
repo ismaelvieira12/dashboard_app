@@ -12,7 +12,7 @@ export default function LoginScreen() {
       <View style={login.EfeitoThree}></View>
       <View style={login.EfeitoFor}></View>
       <View style={login.EfeitoFive}></View>
-      
+
       <View style={login.form}>
         <TouchableOpacity style={login.buttonLogin}>
           <Text style={login.textButtonLogin}>Login</Text>
