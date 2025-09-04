@@ -6,7 +6,7 @@ import LinearGradient from "react-native-linear-gradient";
 export default function LoginScreen() {
   return (
     <View style={login.boxLogin}>
-      <Text style={login.textLogin}>LoginScreen</Text>
+      <Text style={login.textLogin}>Fazer Cadastro</Text>
       <View style={login.EfeitoOne}></View>
       <View style={login.EfeitoTwo}></View>
       <View style={login.EfeitoThree}></View>
