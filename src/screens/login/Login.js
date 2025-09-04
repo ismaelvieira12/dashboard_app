@@ -1,8 +1,10 @@
 import { StyleSheet } from "react-native";
 export const login = StyleSheet.create({
     boxLogin: {
-        // flex: 1,
-        backgroundColorImage: "#272727",
+        flex: 1,
+        justifyContent: "center",
+        position: "relative",
+        
         alignItems: "center",
     },
 
@@ -13,10 +15,19 @@ export const login = StyleSheet.create({
     },
 
     textLogin: {
-        color: "#fff",
+        color: "#bf4747ff",
         fontSize: 20,  
         fontWeight: "bold",
         marginTop: 50,
     },
+
+    EfeitoOne: {
+        width: 200,
+        height: 200,
+        backgroundColor: '#bf4747ff',
+        borderRadius: 100,
+        position: 'absolute',
+        top: -50,
+    }
 
 });
