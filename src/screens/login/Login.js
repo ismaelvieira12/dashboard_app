@@ -33,11 +33,37 @@ export const login = StyleSheet.create({
     EfeitoTwo: {
         width: 100,
         height: 100,
-        backgroundColor: '#C7F9CC',
+        backgroundColor: '#b8e5bcff',
         borderRadius: 200,
         position: 'absolute',
         top: 150,
         right: -60,
+    },
+    EfeitoThree: {
+        width: 850,
+        height: 850,
+        backgroundColor: '#b8e5bcff',
+        borderRadius: "50%",
+        position: 'absolute',
+        bottom: "-65%",
+    },
+    EfeitoFor: {
+        width: 250,
+        height: 250,
+        backgroundColor: '#C7F9CC',
+        borderRadius: "50%",
+        position: 'absolute',
+        bottom: -60,
+        right: "-10%"
+    },
+    EfeitoFive: {
+        width: 250,
+        height: 250,
+        backgroundColor: '#C7F9CC',
+        borderRadius: "50%",
+        position: 'absolute',
+        bottom: -60,
+        right: "-10%"
     }
 
 });
