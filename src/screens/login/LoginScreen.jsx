@@ -16,7 +16,7 @@ export default function LoginScreen() {
       
 
       <TouchableOpacity style={login.buttonLogin}>
-        <text style={login.textButtonLogin}>Login</text>
+        <Text style={login.textButtonLogin}>Criar Conta</Text>
       </TouchableOpacity>
     </View>
 
