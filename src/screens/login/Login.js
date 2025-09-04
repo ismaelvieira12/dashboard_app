@@ -73,6 +73,20 @@ export const login = StyleSheet.create({
         top: "-50%",
         left: "-90%",    
         zIndex: 1,
-    }
+    },
+    buttonLogin: {
+        marginTop: 20,
+        backgroundColor: "#38A3A5",
+        paddingVertical: 10,
+        paddingHorizontal: 20,
+        borderRadius: 5,
+        zIndex: 3,
+    },
+    textButtonLogin: {
+        color: "#fff",
+        fontSize: 18,  
+        fontWeight: "bold",
+        textAlign: "center",
+    },
 
 });
