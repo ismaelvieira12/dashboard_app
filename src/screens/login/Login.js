@@ -8,9 +8,11 @@ export const login = StyleSheet.create({
         alignItems: "center",
     },
     imgEl:{
-        width: 100,
-        height: 100,
+        width: 300,
+        height: 300,
+        top: -25,
         position:"absolute",
+        resizeMode: "contain",
         zIndex: 3
     },
     overlay: {
