@@ -15,12 +15,12 @@ export default function LoginScreen() {
 
       <View style={login.form}>
         <View>
-          
+            
         </View>
-        <TouchableOpacity style={login.buttonLogin}>
-          <Text style={login.textButtonLogin}>Login</Text>
-        </TouchableOpacity>
       </View>
+      <TouchableOpacity style={login.buttonLogin}>
+        <Text style={login.textButtonLogin}>Login</Text>
+      </TouchableOpacity>
       
     </View>
 

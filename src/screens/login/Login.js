@@ -77,7 +77,7 @@ export const login = StyleSheet.create({
 
     form:{
         width: "100%",
-        height: 300,
+        height: "50%",
         // backgroundColor: "#fff",
         // position: "absolute",
         zIndex: 3,
@@ -88,7 +88,7 @@ export const login = StyleSheet.create({
 
     buttonLogin: {
         position: "absolute",
-        bottom: 20,
+        bottom: 80,
         width: "80%",
         marginTop: 20,
         backgroundColor: "#38A3A5",
