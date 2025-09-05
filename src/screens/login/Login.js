@@ -7,7 +7,12 @@ export const login = StyleSheet.create({
         backgroundColor: "#22577A",
         alignItems: "center",
     },
-
+    imgEl:{
+        width: 100,
+        height: 100,
+        position:"absolute",
+        zIndex: 3
+    },
     overlay: {
         backgroundColor: "rgba(22, 22, 22, 0.56)", // Um leve escurecimento por cima da imagem
         padding: 20,
