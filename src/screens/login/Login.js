@@ -8,9 +8,10 @@ export const login = StyleSheet.create({
         alignItems: "center",
     },
     imgEl:{
-        width: 300,
-        height: 300,
-        top: -25,
+        width: 170,
+        height: 100,
+        top: 100,
+        left: 30,
         position:"absolute",
         resizeMode: "contain",
         zIndex: 3
@@ -24,8 +25,8 @@ export const login = StyleSheet.create({
     textLogin: {
         position: "absolute",
         zIndex: 3,
-        top: 135,
-        left:40,
+        top: 235,
+        left:120,
         color: "#fff",
         fontSize: 34,  
         fontWeight: "bold",
