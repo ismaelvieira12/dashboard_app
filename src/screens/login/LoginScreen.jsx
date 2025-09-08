@@ -1,30 +1,35 @@
 import { View, Text, TouchableOpacity, Image } from 'react-native'
 import React from 'react'
 import { login } from '../login/Login'
-import LinearGradient from "react-native-linear-gradient";
+import { BlurView } from 'expo-blur';
+import { styles } from '../welcome/welcome';
+
 
 export default function LoginScreen() {
   return (
-    <View style={login.boxLogin}>
-          <Image
-            style={login.imgEl}
-            source ={require("../../../assets/logo.png")}
-          />
-      <Text style={login.textLogin}>Fazer Login</Text>
-      <View style={login.EfeitoOne}></View>
-      <View style={login.EfeitoTwo}></View>
-      <View style={login.EfeitoThree}></View>
-      <View style={login.EfeitoFor}></View>
-      <View style={login.EfeitoFive}></View>
+  <View style={login.boxLogin}>
+    {/* Efeitos de fundo */}
+    <View style={login.EfeitoOne}></View>
+    <View style={login.EfeitoTwo}></View>
+    <View style={login.EfeitoThree}></View>
+    <View style={login.EfeitoFor}></View>
+    <View style={login.EfeitoFive}></View>
 
-      <View style={login.form}>
-       
-      </View>
-      <TouchableOpacity style={login.buttonLogin}>
-        <Text style={login.textButtonLogin}>Login</Text>
-      </TouchableOpacity>
-      
-    </View>
+    {/* GlassCard */}
+    <BlurView intensity={50} tint="dark" style={login.glassCard}>
+      <Text style={{ color: "#fff", fontSize: 22, fontWeight: "bold" }}>Fazer Login</Text>
+      {/* Aqui você coloca o formulário de login */}
+    </BlurView>
+
+    {/* Logo */}
+    <Image style={login.imgEl} source={require("../../../assets/logo.png")} />
+
+    {/* Botão */}
+    <TouchableOpacity style={login.buttonLogin}>
+      <Text style={login.textButtonLogin}>Login</Text>
+    </TouchableOpacity>
+  </View>
+
 
   )
 }
