@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity, ImageBackground } from 'react-native';
+import { View, Text, TouchableOpacity, ImageBackground, Image } from 'react-native';
 import React from 'react';
 import { styles } from '../welcome/welcome';
 import { useNavigation } from '@react-navigation/native';
@@ -16,6 +16,10 @@ export const WelcomeScreen = () => {
       <View style={styles.efeito}></View>
       {/* Overlay para dar contraste no texto */}
       <View style={styles.overlay}>
+        <Image 
+          style={styles.imagemInicio}
+          source={require('../../../assets/imagem-inicio.png')}
+        />
         <Text style={styles.text}>Bem-vindo ao Finance!</Text>
 
         <TouchableOpacity

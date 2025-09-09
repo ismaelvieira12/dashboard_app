@@ -11,10 +11,16 @@ export const styles = StyleSheet.create({
     height: height + 50,
   },
   efeito: {
-    backgroundColor: "#272626ca",
+    backgroundColor: "#161515ec",
     position: "absolute",
     width: width,
     height: height + 50
+  },
+  imagemInicio: {
+    width: 200,
+    height: 200,
+    position: "absolute",
+    top: 100,
   },
   // Camada de sobreposição para contraste
   overlay: {
