@@ -16,11 +16,18 @@ export const styles = StyleSheet.create({
     width: width,
     height: height + 50
   },
+  boxMarca: {
+    backgroundColor: Colors.corDeFundo,
+    width: width,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center"
+  },
+
   imagemInicio: {
     width: 200,
     height: 200,
-    position: "absolute",
-    top: 100,
+    resizeMode: "center",
   },
   // Camada de sobreposição para contraste
   overlay: {
@@ -34,10 +41,17 @@ export const styles = StyleSheet.create({
   // Texto de boas-vindas
   text: {
     color: "#FFFFFF",
-    fontSize: 32,
-    fontWeight: "bold",
-    textAlign: "center",
+    fontFamily: 'Paprika', // tem que bater com o nome que você definiu
+    fontSize: 50,
+    color: 'white',
     marginBottom: 40,
+  },
+
+  boxBtn: {
+    width: width,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center"
   },
 
   // Botão principal

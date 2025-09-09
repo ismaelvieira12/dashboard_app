@@ -3,9 +3,18 @@ import React from 'react';
 import { styles } from '../welcome/welcome';
 import { useNavigation } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
-
+import { useFonts } from "expo-font";
 export const WelcomeScreen = () => {
   const navigation = useNavigation();
+
+  // Chamando a fonte externa
+  const [fontsLoaded] = useFonts({
+   Paprika : require("../../fonts/Paprika-Regular.ttf"),
+  });
+
+  if (!fontsLoaded) {
+     return <ActivityIndicator size="large" color="#fff" />; // Enquanto a fonte carrega
+  }
 
   return (
     <ImageBackground
@@ -16,28 +25,32 @@ export const WelcomeScreen = () => {
       <View style={styles.efeito}></View>
       {/* Overlay para dar contraste no texto */}
       <View style={styles.overlay}>
-        <Image 
-          style={styles.imagemInicio}
-          source={require('../../../assets/imagem-inicio.png')}
-        />
-        <Text style={styles.text}>Bem-vindo ao Finance!</Text>
+        <View style={ styles.boxMarca}>
+          <Image 
+            style={styles.imagemInicio}
+            source={require('../../../assets/imagem-inicio.png')}
+          />
+          <Text style={styles.text}>BitWav</Text>
+        </View>
 
-        <TouchableOpacity
-          style={styles.buttonSingUp}
-          onPress={() => navigation.navigate('SingUpScreen')}
-        >
-          <Text style={styles.textBtn}>Sign Up</Text>
-        </TouchableOpacity>
-
-        <Text style={styles.loginText}>
-          Já possui uma conta?{' '}
-          <Text
-            style={styles.loginLink}
-            onPress={() => navigation.navigate('LoginScreen')}
+        <View style={styles.boxBtn}>
+          <TouchableOpacity
+            style={styles.buttonSingUp}
+            onPress={() => navigation.navigate('SingUpScreen')}
           >
-            Log In
+            <Text style={styles.textBtn}>Sign Up</Text>
+          </TouchableOpacity>
+
+          <Text style={styles.loginText}>
+            Já possui uma conta?{' '}
+            <Text
+              style={styles.loginLink}
+              onPress={() => navigation.navigate('LoginScreen')}
+            >
+              Log In
+            </Text>
           </Text>
-        </Text>
+        </View>
       </View>
       <StatusBar style='light'/>
     </ImageBackground>
