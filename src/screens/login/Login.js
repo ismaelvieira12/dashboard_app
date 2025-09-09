@@ -36,7 +36,7 @@ export const login = StyleSheet.create({
     EfeitoOne: {
         width: 300,
         height: 300,
-        backgroundColor: '#ffffffff',
+        backgroundColor: '#C7F9CC',
         borderRadius: 200,
         position: 'absolute',
         top: "-9%",
@@ -46,7 +46,7 @@ export const login = StyleSheet.create({
     EfeitoTwo: {
         width: 100,
         height: 100,
-        backgroundColor: '#e9ebe9ff',
+        backgroundColor: '#a7d2abff',
         borderRadius: 200,
         position: 'absolute',
         top: "14%",
@@ -56,7 +56,7 @@ export const login = StyleSheet.create({
     EfeitoThree: {
         width: 850,
         height: 850,
-        backgroundColor: '#e9ebe9ff',
+        backgroundColor: '#a7d2abff',
         borderRadius: "50%",
         position: 'absolute',
         bottom: "-50%",
@@ -65,7 +65,7 @@ export const login = StyleSheet.create({
     EfeitoFor: {
         width: 250,
         height: 250,
-        backgroundColor: '#ffffffff',
+        backgroundColor: '#C7F9CC',
         borderRadius: "50%",
         position: 'absolute',
         bottom: -60,
@@ -74,8 +74,8 @@ export const login = StyleSheet.create({
     },
     EfeitoFive: {
     position: "absolute",
-    top: "-20%",
-    left: "-50%",
+    top: "-9%",
+    left: "-30%",
     borderRadius: "50%",
     backgroundColor: "#1e4f6fd4",
     width: 600, 
