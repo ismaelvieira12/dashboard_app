@@ -4,6 +4,7 @@ import { styles } from '../welcome/welcome';
 import { useNavigation } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
 import { useFonts } from "expo-font";
+import { Colors } from '../../style/Styles';
 export const WelcomeScreen = () => {
   const navigation = useNavigation();
 
@@ -13,7 +14,7 @@ export const WelcomeScreen = () => {
   });
 
   if (!fontsLoaded) {
-     return <ActivityIndicator size="large" color="#fff" />; // Enquanto a fonte carrega
+     return null
   }
 
   return (
@@ -30,7 +31,9 @@ export const WelcomeScreen = () => {
             style={styles.imagemInicio}
             source={require('../../../assets/imagem-inicio.png')}
           />
-          <Text style={styles.text}>BitWav</Text>
+          <Text style={styles.text}>Bit
+            <Text style={styles.textWav}>wav</Text>
+          </Text>
         </View>
 
         <View style={styles.boxBtn}>
@@ -38,7 +41,7 @@ export const WelcomeScreen = () => {
             style={styles.buttonSingUp}
             onPress={() => navigation.navigate('SingUpScreen')}
           >
-            <Text style={styles.textBtn}>Sign Up</Text>
+            <Text style={styles.textBtn}>Cadastrar</Text>
           </TouchableOpacity>
 
           <Text style={styles.loginText}>
@@ -47,7 +50,7 @@ export const WelcomeScreen = () => {
               style={styles.loginLink}
               onPress={() => navigation.navigate('LoginScreen')}
             >
-              Log In
+              Login
             </Text>
           </Text>
         </View>

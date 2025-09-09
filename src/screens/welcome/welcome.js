@@ -17,7 +17,6 @@ export const styles = StyleSheet.create({
     height: height + 50
   },
   boxMarca: {
-    backgroundColor: Colors.corDeFundo,
     width: width,
     display: "flex",
     justifyContent: "center",
@@ -32,7 +31,7 @@ export const styles = StyleSheet.create({
   // Camada de sobreposição para contraste
   overlay: {
     flex: 1,
-    justifyContent: "center", // Centraliza tudo verticalmente
+    justifyContent: "space-around", // Centraliza tudo verticalmente
     alignItems: "center", // Centraliza horizontalmente
     paddingHorizontal: 20,
     backgroundColor: "rgba(0, 0, 0, 0.3)", // Escurece levemente a imagem de fundo
@@ -46,17 +45,19 @@ export const styles = StyleSheet.create({
     color: 'white',
     marginBottom: 40,
   },
-
-  // boxBtn: {
-  //   width: width,
-  //   display: "flex",
-  //   justifyContent: "center",
-  //   alignItems: "center"
-  // },
+  textWav: {
+    color: Colors.wav
+  },
+  boxBtn: {
+    width: width,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center"
+  },
 
   // Botão principal
   buttonSingUp: {
-    backgroundColor: "#00bfff",
+    backgroundColor: Colors.btn,
     paddingVertical: 15,
     paddingHorizontal: 60,
     borderRadius: 10,
@@ -72,7 +73,7 @@ export const styles = StyleSheet.create({
 
   // Texto do botão
   textBtn: {
-    color: "#fff",
+    color: Colors.corBranca,
     fontSize: 18,
     fontWeight: "bold",
   },
@@ -81,12 +82,11 @@ export const styles = StyleSheet.create({
   loginText: {
     color: "#dbd9d9ff",
     fontSize: 16,
-    marginTop: 15,
   },
 
   // Link para login
   loginLink: {
     fontWeight: "bold",
-    color: "#00bfff",
+    color: Colors.btn,
   },
 });
