@@ -1,122 +1,122 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Dimensions } from "react-native";
+
+const { width, height } = Dimensions.get("window");
+
 export const login = StyleSheet.create({
     boxLogin: {
         flex: 1,
         justifyContent: "center",
-        position: "relative",
-        backgroundColor: "#22577A",
         alignItems: "center",
+        backgroundColor: "#22577A",
     },
-    imgEl:{
-        width: 170,
-        height: 100,
-        top: 100,
-        left: 30,
-        position:"absolute",
+
+    imgEl: {
+        width: width * 0.4, // 40% da largura da tela
+        height: height * 0.12, // 12% da altura da tela
+        position: "absolute",
+        top: height * 0.12,
+        left: width * 0.08,
         resizeMode: "contain",
-        zIndex: 3
+        zIndex: 3,
     },
+
     overlay: {
-        backgroundColor: "rgba(22, 22, 22, 0.56)", // Um leve escurecimento por cima da imagem
-        padding: 20,
+        backgroundColor: "rgba(22, 22, 22, 0.56)",
+        padding: width * 0.05,
         borderRadius: 10,
     },
 
     textLogin: {
         position: "absolute",
         zIndex: 3,
-        top: 235,
-        left:120,
+        top: height * 0.28,
+        left: width * 0.33,
         color: "#fff",
-        fontSize: 34,  
+        fontSize: width * 0.09, // fonte responsiva
         fontWeight: "bold",
-        marginTop: 50,
     },
 
     EfeitoOne: {
-        width: 300,
-        height: 300,
-        backgroundColor: '#C7F9CC',
-        borderRadius: 200,
-        position: 'absolute',
-        top: "-9%",
+        width: width * 0.7,
+        height: width * 0.7,
+        backgroundColor: "#C7F9CC",
+        borderRadius: width * 0.38,
+        position: "absolute",
+        top: "-8%",
         right: "-20%",
         zIndex: 2,
     },
+
     EfeitoTwo: {
-        width: 100,
-        height: 100,
-        backgroundColor: '#a7d2abff',
-        borderRadius: 200,
-        position: 'absolute',
-        top: "14%",
-        right: "-10%",
+        width: width * 0.25,
+        height: width * 0.25,
+        backgroundColor: "#a7d2abff",
+        borderRadius: width * 0.125,
+        position: "absolute",
+        top: height * 0.18,
+        right: "-15%",
         zIndex: 2,
     },
+
     EfeitoThree: {
-        width: 850,
-        height: 850,
-        backgroundColor: '#a7d2abff',
-        borderRadius: "50%",
-        position: 'absolute',
-        bottom: "-50%",
+        width: width * 2,
+        height: width * 2,
+        backgroundColor: "#a7d2abff",
+        borderRadius: width,
+        position: "absolute",
+        bottom: "-60%",
         zIndex: 2,
     },
+
     EfeitoFor: {
-        width: 250,
-        height: 250,
-        backgroundColor: '#C7F9CC',
-        borderRadius: "50%",
-        position: 'absolute',
+        width: width * 0.6,
+        height: width * 0.6,
+        backgroundColor: "#C7F9CC",
+        borderRadius: width * 0.3,
+        position: "absolute",
         bottom: -60,
         right: "-10%",
         zIndex: 2,
     },
+
     EfeitoFive: {
-    position: "absolute",
-    top: "-9%",
-    left: "-30%",
-    borderRadius: "50%",
-    backgroundColor: "#1e4f6fd4",
-    width: 600, 
-    height: 600,
-    zIndex: 1,
+        position: "absolute",
+        top: "-10%",
+        left: "-45%",
+        width: width * 1.4,
+        height: width * 1.4,
+        borderRadius: width * 0.8,
+        backgroundColor: "#1e4f6fd4",
+        zIndex: 1,
     },
 
-    form:{
+    form: {
         width: "100%",
         height: "50%",
-        // backgroundColor: "#fff",
-        // position: "absolute",
         zIndex: 3,
-        display:"flex",
         justifyContent: "center",
-        alignItems:  "center",
+        alignItems: "center",
     },
 
     buttonLogin: {
         position: "absolute",
-        bottom: 80,
+        bottom: height * 0.1,
         width: "80%",
-        marginTop: 20,
         backgroundColor: "#38A3A5",
-        paddingVertical: 15,
+        paddingVertical: height * 0.02,
         borderRadius: 5,
         zIndex: 3,
         shadowColor: "#000",
-        shadowOffset: {
-            width: 0,
-            height: 2,
-        },
+        shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
         elevation: 5,
     },
+
     textButtonLogin: {
         color: "#fff",
-        fontSize: 19,  
+        fontSize: width * 0.05,
         fontWeight: "bold",
         textAlign: "center",
     },
-
 });
