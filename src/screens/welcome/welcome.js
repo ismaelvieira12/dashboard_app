@@ -47,12 +47,12 @@ export const styles = StyleSheet.create({
     marginBottom: 40,
   },
 
-  boxBtn: {
-    width: width,
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center"
-  },
+  // boxBtn: {
+  //   width: width,
+  //   display: "flex",
+  //   justifyContent: "center",
+  //   alignItems: "center"
+  // },
 
   // Botão principal
   buttonSingUp: {
