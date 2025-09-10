@@ -1,4 +1,5 @@
 import { StyleSheet, Dimensions } from "react-native";
+import { Colors } from "../../style/Styles";
 
 const { width, height } = Dimensions.get("window");
 
@@ -30,7 +31,13 @@ export const login = StyleSheet.create({
         fontSize: width * 0.09, // fonte responsiva
         fontWeight: "bold",
     },
-
+    boxFormLogin: {
+        position: "absolute",
+        width: width,
+        height: height,
+        backgroundColor: Colors.cor03,
+        zIndex: 3
+    },
     EfeitoOne: {
         width: width * 0.7,
         height: width * 0.7,

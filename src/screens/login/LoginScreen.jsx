@@ -15,8 +15,10 @@ export default function LoginScreen() {
     <View style={login.EfeitoFor}></View>
     <View style={login.EfeitoFive}></View>
 
-    
-    <Image style={login.imgEl} source={require("../../../assets/logo.png")} />
+    <View style={styles.boxFormLogin}>
+      <Text>Teste</Text>
+      <Image style={login.imgEl} source={require("../../../assets/logo.png")} />
+    </View>
 
     {/* Botão */}
     <TouchableOpacity style={login.buttonLogin}>
