@@ -31,6 +31,7 @@ export const login = StyleSheet.create({
         fontSize: width * 0.09, // fonte responsiva
         fontWeight: "bold",
     },
+    
     boxFormLogin: {
         position: "absolute",
         width: width,
