@@ -11,7 +11,7 @@ export const styles = StyleSheet.create({
     height: height + 50,
   },
   efeito: {
-    backgroundColor: "#161515ec",
+    backgroundColor: "#161515d9",
     position: "absolute",
     width: width,
     height: height + 50
