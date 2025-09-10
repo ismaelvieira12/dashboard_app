@@ -20,20 +20,6 @@ export const login = StyleSheet.create({
         zIndex: 3,
     },
 
-    glassCard: {
-       position: "absolute",
-        top: height * 0.2, // ou onde você quer
-        width: width * 0.90,
-        height: height * 0.5,
-        borderRadius: 20,
-        padding: 20,
-        backgroundColor: 'rgba(151, 151, 151, 0.15)',
-        borderWidth: 1,
-        borderColor: 'rgba(255, 255, 255, 0.3)',
-        justifyContent: 'center',
-        alignItems: 'center',
-        zIndex: 3,
-    },
 
     textLogin: {
         position: "absolute",

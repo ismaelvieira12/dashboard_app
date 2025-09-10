@@ -15,13 +15,7 @@ export default function LoginScreen() {
     <View style={login.EfeitoFor}></View>
     <View style={login.EfeitoFive}></View>
 
-    {/* GlassCard */}
-    <BlurView intensity={50} tint="dark" style={login.glassCard}>
-      <Text style={{ color: "#fff", fontSize: 22, fontWeight: "bold" }}>Fazer Login</Text>
-      {/* Aqui você coloca o formulário de login */}
-    </BlurView>
-
-    {/* Logo */}
+    
     <Image style={login.imgEl} source={require("../../../assets/logo.png")} />
 
     {/* Botão */}
