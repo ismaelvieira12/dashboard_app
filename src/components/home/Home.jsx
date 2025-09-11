@@ -1,6 +1,7 @@
 
 import { View, Text, StyleSheet } from 'react-native';
 import {Sidbar} from '../sidbar/Sidbar'
+import { Colors } from '../../style/Styles';
 
 export const Home = () => {
   return (
@@ -14,7 +15,8 @@ export const Home = () => {
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#272727",
+    // backgroundColor: "#272727",
+    backgroundColor: Colors.corDeFundo,
     alignItems: "center",
     justifyContent: "flex-start", // Alinha no topo
   },

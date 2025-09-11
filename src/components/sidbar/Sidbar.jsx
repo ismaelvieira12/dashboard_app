@@ -15,19 +15,22 @@ export const Sidbar = () => {
 export const styles = StyleSheet.create({
     boxMenu: {
         display: "flex",
-        justifyContent: "center",
+        justifyContent: "space-around",
+        flexDirection:"row",
         alignItems:"center",
-        flexDirection:"column",
-        backgroundColor: "red",
+        backgroundColor: "#323131",
         padding: 5,
         gap: 10,
         position: "absolute",
         bottom: 0,
-        width: "100%"
+        width: "100%",
+        height: 90
+
     },
     burguer: {
-        width : 50,
-        height: 5,
-        backgroundColor: "#fff"
+        width : 60,
+        height: 50,
+        backgroundColor: "#413f3f",
+        borderRadius: 10
     }
 });
