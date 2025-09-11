@@ -2,12 +2,14 @@
 import { View, Text, StyleSheet } from 'react-native';
 import {Sidbar} from '../sidbar/Sidbar'
 import { Colors } from '../../style/Styles';
+import { LineChart } from '../graficos/LineChart';
 
 export const Home = () => {
   return (
     <View style={styles.container}>
       <Sidbar />
       <Text style={styles.text}>Home</Text>
+      <LineChart />
     </View>
   );
 };
