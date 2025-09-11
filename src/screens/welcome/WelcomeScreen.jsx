@@ -41,18 +41,8 @@ export const WelcomeScreen = () => {
             style={styles.buttonSingUp}
             onPress={() => navigation.navigate('SingUpScreen')}
           >
-            <Text style={styles.textBtn}>Cadastrar</Text>
+            <Text style={styles.textBtn}>Entrar</Text>
           </TouchableOpacity>
-
-          <Text style={styles.loginText}>
-            Já possui uma conta?{' '}
-            <Text
-              style={styles.loginLink}
-              onPress={() => navigation.navigate('LoginScreen')}
-            >
-              Login
-            </Text>
-          </Text>
         </View>
       </View>
       <StatusBar style='light'/>
