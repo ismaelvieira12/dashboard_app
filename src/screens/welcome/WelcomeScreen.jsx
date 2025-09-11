@@ -39,7 +39,7 @@ export const WelcomeScreen = () => {
         <View style={styles.boxBtn}>
           <TouchableOpacity
             style={styles.buttonSingUp}
-            onPress={() => navigation.navigate('SingUpScreen')}
+            onPress={() => navigation.navigate('Home')}
           >
             <Text style={styles.textBtn}>Entrar</Text>
           </TouchableOpacity>
