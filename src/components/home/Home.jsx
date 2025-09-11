@@ -1,9 +1,11 @@
 
 import { View, Text, StyleSheet } from 'react-native';
+import {Sidbar} from '../sidbar/Sidbar'
 
 export const Home = () => {
   return (
     <View style={styles.container}>
+      <Sidbar />
       <Text style={styles.text}>Home</Text>
     </View>
   );
@@ -15,7 +17,6 @@ export const styles = StyleSheet.create({
     backgroundColor: "#272727",
     alignItems: "center",
     justifyContent: "flex-start", // Alinha no topo
-    padding: 20,
   },
   text: {
     color: "#fff",  // Deixa o texto visível no fundo preto

@@ -4,6 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { StatusBar } from 'expo-status-bar';
 import { Home } from './src/components/home/Home';
 import { WelcomeScreen } from './src/screens/welcome/WelcomeScreen'; 
+import { Sidbar } from './src/components/sidbar/Sidbar';
 
 const Stack = createStackNavigator();
 
@@ -13,6 +14,7 @@ export default function App() {
       <Stack.Navigator initialRouteName="WelcomeScreen">
         <Stack.Screen name="Home" options={{headerShown: false}} component={Home} />
         <Stack.Screen name="WelcomeScreen" options={{headerShown: false}} component={WelcomeScreen} />
+        <Stack.Screen name='Sidbar' options={{headerShown: false}} component={Sidbar} />
       </Stack.Navigator>
       <StatusBar style="auto"/>
     </NavigationContainer>
