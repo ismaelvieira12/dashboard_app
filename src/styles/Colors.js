@@ -11,6 +11,6 @@ export const Colors = StyleSheet.create({
     corDeFundo: "#323131ff",
     wav: "#44e554ff",    
     btn: "#00bfff",
-    
+    //cores para gradient 
 
 })
