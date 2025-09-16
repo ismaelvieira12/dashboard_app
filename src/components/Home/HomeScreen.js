@@ -1,15 +1,15 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import { graficos } from '../Home/Home';
 import { CartesianChart, Line } from "victory-native";
 
-const DATA = Array.from({ length: 31 }, (_, i) => ({
-  day: i,
-  highTmp: 40 + 30 * Math.random(),
-}));
+const DATA = [
+  {day: new Date("2025-09-10")}
+]
 
 export const  HomeScreen = () => {
   return (
-    <View>
+    <View style={graficos.containerGra}>
       <View style={{width: "100%", height: 350}}>
 
         <CartesianChart data={DATA} xKey="day" yKeys={["highTmp"]}>
