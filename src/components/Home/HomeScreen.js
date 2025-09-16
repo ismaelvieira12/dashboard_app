@@ -29,12 +29,18 @@ export const  HomeScreen = () => {
   })
 
   // para mostrar a Data na tela
-   const animetedData = useAnimatedProps(() => {
+   const animetedDataText = useAnimatedProps(() => {
+     const date = new Date(state.x.value.value)
     return {
-      Text: `R$ ${state.y.price.value.value.toFixed(2)}`,
+
+      // Pegando a Data
+      Text: `${date.toLocaleDateString("pt-BR")}`,
       defaultValue: ""
     }
   })
+
+  
+
 
   return (
     <View style={graficos.containerGra}>
