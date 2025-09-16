@@ -24,7 +24,7 @@ export default function App() {
         <Stack.Screen 
           name="Home" 
           component={HomeScreen} 
-          options={{ title: 'Início' }} // Opcional: define o título do cabeçalho
+          options={{ headerShown: false }} // Opcional: define o título do cabeçalho
         />
       </Stack.Navigator>
       <StatusBar style="auto" />

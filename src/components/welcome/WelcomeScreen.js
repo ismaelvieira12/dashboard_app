@@ -3,8 +3,12 @@ import React from 'react';
 import { styles } from '../Welcome/Welcome';
 import { StatusBar } from 'expo-status-bar';
 import { useFonts } from "expo-font";
-export const WelcomeScreen = () => {
+import { useNavigation } from '@react-navigation/native';
 
+
+
+export const WelcomeScreen = () => {
+  const navigation = useNavigation();
   // Chamando a fonte externa
   const [fontsLoaded] = useFonts({
    Paprika : require("../../fonts/Paprika-Regular.ttf"),
@@ -36,6 +40,7 @@ export const WelcomeScreen = () => {
         <View style={styles.boxBtn}>
           <TouchableOpacity
             style={styles.buttonSingUp}
+            onPress={() => navigation.navigate('Home')}
           >
             <Text style={styles.textBtn}>Entrar</Text>
           </TouchableOpacity>
