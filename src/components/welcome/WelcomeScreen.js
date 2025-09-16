@@ -40,8 +40,8 @@ export const WelcomeScreen = () => {
             <Text style={styles.textBtn}>Entrar</Text>
           </TouchableOpacity>
         </View>
+        <StatusBar style='light'/>
       </View>
-      <StatusBar style='light'/>
     </ImageBackground>
   );
 };
