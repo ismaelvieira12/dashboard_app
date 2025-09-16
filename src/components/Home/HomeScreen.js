@@ -4,7 +4,14 @@ import { graficos } from '../Home/Home';
 import { CartesianChart, Line } from "victory-native";
 
 const DATA = [
-  {day: new Date("2025-09-10")}
+  {day: new Date("2025-09-10").getTime(), price: 500},
+  {day: new Date("2025-09-11").getTime(), price: 250},
+  {day: new Date("2025-09-12").getTime(), price: 600},
+  {day: new Date("2025-09-13").getTime(), price: 720},
+  {day: new Date("2025-09-14").getTime(), price: 430},
+  {day: new Date("2025-09-15").getTime(), price: 100},
+  {day: new Date("2025-09-16").getTime(), price: 980},
+
 ]
 
 export const  HomeScreen = () => {
@@ -12,10 +19,10 @@ export const  HomeScreen = () => {
     <View style={graficos.containerGra}>
       <View style={{width: "100%", height: 350}}>
 
-        <CartesianChart data={DATA} xKey="day" yKeys={["highTmp"]}>
+        <CartesianChart data={DATA} xKey="day" yKeys={["price"]}>
           {({ points }) => (
 
-            <Line points={points.highTmp} color="red" strokeWidth={3} />
+            <Line points={points.price} color="#FA4" strokeWidth={4} />
           )}
         </CartesianChart>
 
