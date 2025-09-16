@@ -1,14 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import { Welcome } from './src/components/welcome/Welcome';
+import Welcome from './src/components/Welcome/Welcome';
 
 export default function App() {
   return (
-
-    <View style={styles.container}><Text style={styles.text}>Teste</Text>
-    
+    <View style={styles.container}>
       <Welcome />
-      <StatusBar style='auto'/>
+      <Text style={styles.text}>Teste</Text>
+      <StatusBar style="auto" />
     </View>
   );
 }
@@ -21,6 +20,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   text: {
-    color: "#000"
-  }
+    color: '#000',
+  },
 });
