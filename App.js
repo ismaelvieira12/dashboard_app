@@ -8,6 +8,7 @@ export default function App() {
     <View style={styles.container}>
       <WelcomeScreen />
       
+      {/* Indo para pagina de inicio */}
       <HomeScreen />
       <StatusBar style="auto" />
     </View>
