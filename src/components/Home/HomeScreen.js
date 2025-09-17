@@ -1,7 +1,7 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, TextInput } from 'react-native'
 import React from 'react'
 import { graficos } from '../Home/Home';
-import { useAnimatedProps } from 'react-native-reanimated';
+import Animated, { useAnimatedProps } from 'react-native-reanimated';
 import { CartesianChart, Line, useChartPressState } from "victory-native";
 
 const DATA = [
@@ -12,45 +12,60 @@ const DATA = [
   {day: new Date("2025-09-14").getTime(), price: 430},
   {day: new Date("2025-09-15").getTime(), price: 10},
   {day: new Date("2025-09-16").getTime(), price: 980},
-
 ]
 
-export const  HomeScreen = () => {
+// Criando componente animado de input
+const AnimatedTextInput = Animated.createAnimatedComponent(TextInput)
 
-  // criando interação com o grafico
-  const { state, isActive} = useChartPressState({x, y: { price: 0 }})
+export const HomeScreen = () => {
+  // criando interação com o gráfico
+  const { state, isActive } = useChartPressState({ x: 0, y: { price: 0 } })
 
-  // Criando a div de animaão para mostrar os valores na tela
-  const animetedText = useAnimatedProps(() => {
+  // Animação para mostrar valores
+  const animatedText = useAnimatedProps(() => {
     return {
-      Text: `R$ ${state.y.price.value.value.toFixed(2)}`,
-      defaultValue: ""
+      text: `R$ ${state.y.price.value.value.toFixed(2)}`
     }
   })
 
-  // para mostrar a Data na tela
-   const animetedDataText = useAnimatedProps(() => {
-     const date = new Date(state.x.value.value)
+  // Animação para mostrar datas
+  const animatedDataText = useAnimatedProps(() => {
+    const date = new Date(state.x.value.value)
     return {
-
-      // Pegando a Data
-      Text: `${date.toLocaleDateString("pt-BR")}`,
-      defaultValue: ""
+      text: `${date.toLocaleDateString("pt-BR")}`
     }
   })
-
-  
-
 
   return (
     <View style={graficos.containerGra}>
-      <View style={{width: "100%", height: 350}}>
+      <View style={{ width: "100%", height: 350 }}>
 
-        <CartesianChart data={DATA} xKey="day" yKeys={["price"]}
+        {/* Mostrando os valores e a data quando pressionar */}
+        {isActive && (
+          <View>
+            <AnimatedTextInput
+              editable={false} 
+              underlineColorAndroid="transparent"
+              style={{ fontSize: 30, fontWeight: 'bold', color: "#000" }}
+              animatedProps={animatedText}
+            />
+
+            <AnimatedTextInput
+              editable={false} 
+              underlineColorAndroid="transparent"
+              style={{ fontSize: 20, color: "#555" }}
+              animatedProps={animatedDataText}
+            />
+          </View>
+        )}
+
+        <CartesianChart 
+          data={DATA} 
+          xKey="day" 
+          yKeys={["price"]}
           chartPressState={state}
         >
           {({ points }) => (
-
             <Line points={points.price} color="#FA4" strokeWidth={4} />
           )}
         </CartesianChart>
