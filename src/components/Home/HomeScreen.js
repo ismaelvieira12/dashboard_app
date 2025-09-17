@@ -1,8 +1,10 @@
 import { StyleSheet, Text, View, TextInput } from 'react-native'
 import React from 'react'
 import { graficos } from '../Home/Home';
-import Animated, { useAnimatedProps } from 'react-native-reanimated';
+import Animated, { useAnimatedProps, SharedValue } from 'react-native-reanimated';
 import { CartesianChart, Line, useChartPressState } from "victory-native";
+import { Circle } from '@shopify/react-native-skia';
+
 
 const DATA = [
   {day: new Date("2025-09-10").getTime(), price: 500},
@@ -14,6 +16,10 @@ const DATA = [
   {day: new Date("2025-09-16").getTime(), price: 980},
 ]
 
+
+function ToolTip({ x, y }) {
+  return <Circle cx={x} cy={y} r={8} color="black" />;
+}
 // Criando componente animado de input
 const AnimatedTextInput = Animated.createAnimatedComponent(TextInput)
 
@@ -77,10 +83,18 @@ export const HomeScreen = () => {
           data={DATA} 
           xKey="day" 
           yKeys={["price"]}
+          axisOptions={{
+            tickCount: 5
+          }}
           chartPressState={state}
         >
           {({ points }) => (
-            <Line points={points.price} color="#FA4" strokeWidth={4} />
+            <>
+              <Line points={points.price} color="#FA4" strokeWidth={4} />
+              {isActive && (
+                <ToolTip x={state.x.position} y={state.y.price.position}/>
+              )}
+            </>
           )}
         </CartesianChart>
 
