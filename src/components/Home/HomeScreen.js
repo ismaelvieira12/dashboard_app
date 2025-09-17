@@ -3,8 +3,7 @@ import React from 'react'
 import { graficos } from '../Home/Home';
 import Animated, { useAnimatedProps, SharedValue } from 'react-native-reanimated';
 import { CartesianChart, Line, useChartPressState } from "victory-native";
-import { Circle } from '@shopify/react-native-skia';
-
+import { Circle, useFont } from '@shopify/react-native-skia';
 
 const DATA = [
   {day: new Date("2025-09-10").getTime(), price: 500},
@@ -16,6 +15,9 @@ const DATA = [
   {day: new Date("2025-09-16").getTime(), price: 980},
 ]
 
+// importando as fontes
+
+ const font = useFont(require('../../fonts/Paprika-Regular.ttf'));
 
 function ToolTip({ x, y }) {
   return <Circle cx={x} cy={y} r={8} color="black" />;
@@ -84,7 +86,10 @@ export const HomeScreen = () => {
           xKey="day" 
           yKeys={["price"]}
           axisOptions={{
-            tickCount: 5
+            tickCount: 5,
+            font: font,
+            labelOffset: {x: 3, y: 2},
+            labelPosition: "inset"
           }}
           chartPressState={state}
         >
