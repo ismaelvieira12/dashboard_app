@@ -16,7 +16,7 @@ const DATA = [
 ]
 
 // importando as fontes
-
+              
 
 function ToolTip({ x, y }) {
   return <Circle cx={x} cy={y} r={8} color="black" />;
