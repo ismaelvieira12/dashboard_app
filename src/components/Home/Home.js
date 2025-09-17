@@ -6,6 +6,10 @@ export const graficos = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         // padding:30
+    },
+    Values: {
+        position: "absolute",
+        top: 80
     }
 
 });

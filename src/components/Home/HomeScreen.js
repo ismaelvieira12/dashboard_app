@@ -38,11 +38,9 @@ export const HomeScreen = () => {
 
   return (
     <View style={graficos.containerGra}>
-      <View style={{ width: "100%", height: 350 }}>
-
         {/* Mostrando os valores e a data quando pressionar */}
         {isActive && (
-          <View>
+          <View style={graficos.Values}>
             <AnimatedTextInput
               editable={false} 
               underlineColorAndroid="transparent"
@@ -58,6 +56,8 @@ export const HomeScreen = () => {
             />
           </View>
         )}
+      <View style={{ width: "100%", height: 350 }}>
+
 
         <CartesianChart 
           data={DATA} 
