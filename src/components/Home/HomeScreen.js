@@ -17,7 +17,6 @@ const DATA = [
 
 // importando as fontes
 
- const font = useFont(require('../../fonts/Paprika-Regular.ttf'));
 
 function ToolTip({ x, y }) {
   return <Circle cx={x} cy={y} r={8} color="black" />;
@@ -87,7 +86,6 @@ export const HomeScreen = () => {
           yKeys={["price"]}
           axisOptions={{
             tickCount: 5,
-            font: font,
             labelOffset: {x: 3, y: 2},
             labelPosition: "inset"
           }}
