@@ -7,9 +7,17 @@ export const graficos = StyleSheet.create({
         alignItems: "center",
         // padding:30
     },
+
     Values: {
         position: "absolute",
-        top: 80
+        top: 80,
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center"
+    },
+
+    DateText: {
+        fontSize: 20
     }
 
 });

@@ -44,7 +44,7 @@ export const HomeScreen = () => {
             <AnimatedTextInput
               editable={false} 
               underlineColorAndroid="transparent"
-              style={{ fontSize: 30, fontWeight: 'bold', color: "#000" }}
+              style={{ fontSize: 30, fontWeight: 'bold', color: "#000000ff" }}
               animatedProps={animatedText}
             />
 
@@ -54,6 +54,20 @@ export const HomeScreen = () => {
               style={{ fontSize: 20, color: "#555" }}
               animatedProps={animatedDataText}
             />
+          </View>
+        )}
+
+        {/* Mostrar o ultimo valor mesmo quando não estiver pressionando o grafico */}
+
+        {!isActive && (
+          <View style={graficos.Values}>
+            <AnimatedTextInput
+              style={{ fontSize: 30, fontWeight: 'bold', color: "#000000ff" }}
+            >
+                R$ {DATA[DATA.length - 1].price.toFixed(2)}
+            </AnimatedTextInput>
+
+            <Text style={graficos.DateText}> Hoje </Text>
           </View>
         )}
       <View style={{ width: "100%", height: 350 }}>
