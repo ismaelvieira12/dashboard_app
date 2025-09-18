@@ -17,7 +17,7 @@ const DATA = [
 
 // Componente do "ponto ativo"
 function ToolTip({ x, y }) {
-  return <Circle cx={x} cy={y} r={8} color="black" />;
+  return  <Circle cx={x} cy={y} r={10} color="#0066ff" style="stroke" strokeWidth={3} />;
 }
 
 const AnimatedTextInput = Animated.createAnimatedComponent(TextInput)
@@ -62,11 +62,17 @@ export const HomeScreen = () => {
       {!isActive && (
         <View style={graficos.Values}>
           <AnimatedTextInput
+          editable={false} 
             style={{ fontSize: 50, fontWeight: 'bold', color: "#000000ff" }}
           >
             R$ {DATA[DATA.length - 1].price.toFixed(2)}
           </AnimatedTextInput>
-          <Text style={graficos.DateText}>Hoje</Text>
+
+          <AnimatedTextInput
+            editable={false} 
+          >
+            <Text style={graficos.DateText}>Hoje</Text>
+          </AnimatedTextInput>
         </View>
       )}
 
@@ -77,8 +83,13 @@ export const HomeScreen = () => {
           yKeys={["price"]}
           axisOptions={{
             tickCount: 5,
-            labelOffset: {x: 3, y: 2},
-            labelPosition: "inset"
+            lineColor: "#ccc",       // cor dos eixos
+            lineWidth: 1,            // espessura da grade
+            labelColor: "#333",      // cor do texto nos eixos
+            gridColor: "#e0e0e0",    // cor da grade
+            gridWidth: 1,            // espessura da grade
+            labelOffset: { x: 5, y: 5 },
+            labelPosition: "outset"  // "inset" ou "outset"
           }}
           chartPressState={state}
         >
