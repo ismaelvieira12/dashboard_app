@@ -88,7 +88,8 @@ export const HomeScreen = () => {
               <Line 
                 points={points.price} 
                 color="#FA4" 
-                strokeWidth={4} 
+                strokeWidth={5} 
+                
                 curveType="monotoneX" 
               />
               {isActive && (
