@@ -4,7 +4,7 @@ import { graficos } from '../Home/Home';
 import Animated, { useAnimatedProps } from 'react-native-reanimated';
 import { CartesianChart, Line, useChartPressState } from "victory-native";
 import { Circle } from '@shopify/react-native-skia';
-import { Area } from "victory-native";
+
 const DATA = [
   {day: new Date("2025-09-10").getTime(), price: 500},
   {day: new Date("2025-09-11").getTime(), price: 250},
@@ -77,51 +77,38 @@ export const HomeScreen = () => {
       )}
 
       <View style={graficos.graficoNumberOne}>
-       <CartesianChart
-        data={DATA}
-        xKey="day"
-        yKeys={["price"]}
-        axisOptions={{
-          tickCount: 5,
-          gridColor: "#e0e0e0",
-          gridWidth: 1,
-          labelColor: "#555",
-          labelFontSize: 12,
-          lineColor: "#aaa",
-          lineWidth: 1,
-          labelOffset: { x: 5, y: 5 },
-        }}
-        chartPressState={state}
-      >
-        {({ points }) => (
-          <>
-            {/* Linha principal */}
-            <Line
-              points={points.price}
-              color="#0066ff"
-              strokeWidth={3}
-              curveType="monotoneX"
-            />
-
-            {/* Área preenchida */}
-            <Area
-              points={points.price}
-              color="#0066ff22"
-              curveType="monotoneX"
-            />
-
-            {/* Tooltip personalizado */}
-            {isActive && (
-              <ToolTip
-                x={state.x.position}
-                y={state.y.price.position}
-                value={state.y.price.value.value.toFixed(2)}
+        <CartesianChart 
+          data={DATA} 
+          xKey="day" 
+          yKeys={["price"]}
+          axisOptions={{
+            tickCount: 5,
+            lineColor: "#ccc",       // cor dos eixos
+            lineWidth: 1,            // espessura da grade
+            labelColor: "#333",      // cor do texto nos eixos
+            gridColor: "#e0e0e0",    // cor da grade
+            gridWidth: 1,            // espessura da grade
+            labelOffset: { x: 5, y: 5 },
+            labelPosition: "outset"  // "inset" ou "outset"
+          }}
+          chartPressState={state}
+        >
+          {({ points }) => (
+            <>
+              {/* Linha suavizada com Bézier cúbica */}
+              <Line 
+                points={points.price} 
+                color="#FA4" 
+                strokeWidth={5} 
+                
+                curveType="monotoneX" 
               />
-            )}
-          </>
-        )}
-</CartesianChart>
-
+              {isActive && (
+                <ToolTip x={state.x.position} y={state.y.price.position}/>
+              )}
+            </>
+          )}
+        </CartesianChart>
       </View>
     </View>
   )
