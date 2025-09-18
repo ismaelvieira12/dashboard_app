@@ -46,7 +46,7 @@ export const HomeScreen = () => {
           <AnimatedTextInput
             editable={false} 
             underlineColorAndroid="transparent"
-            style={{ fontSize: 30, fontWeight: 'bold', color: "#000000ff" }}
+            style={{ fontSize: 50, fontWeight: 'bold', color: "#000000ff" }}
             animatedProps={animatedText}
           />
           <AnimatedTextInput

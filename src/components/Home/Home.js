@@ -8,6 +8,11 @@ export const graficos = StyleSheet.create({
         // padding:30
     },
 
+    graficoNumberOne: {
+        width: "100%",
+        height: 350
+    },
+
     Values: {
         position: "absolute",
         top: 80,
