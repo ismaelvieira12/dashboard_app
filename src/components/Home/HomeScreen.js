@@ -1,9 +1,9 @@
 import { StyleSheet, Text, View, TextInput } from 'react-native'
 import React from 'react'
 import { graficos } from '../Home/Home';
-import Animated, { useAnimatedProps, SharedValue } from 'react-native-reanimated';
+import Animated, { useAnimatedProps } from 'react-native-reanimated';
 import { CartesianChart, Line, useChartPressState } from "victory-native";
-import { Circle, useFont } from '@shopify/react-native-skia';
+import { Circle } from '@shopify/react-native-skia';
 
 const DATA = [
   {day: new Date("2025-09-10").getTime(), price: 500},
@@ -15,27 +15,22 @@ const DATA = [
   {day: new Date("2025-09-16").getTime(), price: 980},
 ]
 
-// importando as fontes
-              
-
+// Componente do "ponto ativo"
 function ToolTip({ x, y }) {
   return <Circle cx={x} cy={y} r={8} color="black" />;
 }
-// Criando componente animado de input
+
 const AnimatedTextInput = Animated.createAnimatedComponent(TextInput)
 
 export const HomeScreen = () => {
-  // criando interação com o gráfico
   const { state, isActive } = useChartPressState({ x: 0, y: { price: 0 } })
 
-  // Animação para mostrar valores
   const animatedText = useAnimatedProps(() => {
     return {
       text: `R$ ${state.y.price.value.value.toFixed(2)}`
     }
   })
 
-  // Animação para mostrar datas
   const animatedDataText = useAnimatedProps(() => {
     const date = new Date(state.x.value.value)
     return {
@@ -45,41 +40,37 @@ export const HomeScreen = () => {
 
   return (
     <View style={graficos.containerGra}>
-        {/* Mostrando os valores e a data quando pressionar */}
-        {isActive && (
-          <View style={graficos.Values}>
-            <AnimatedTextInput
-              editable={false} 
-              underlineColorAndroid="transparent"
-              style={{ fontSize: 30, fontWeight: 'bold', color: "#000000ff" }}
-              animatedProps={animatedText}
-            />
+      {/* Mostrar valores quando pressiona */}
+      {isActive && (
+        <View style={graficos.Values}>
+          <AnimatedTextInput
+            editable={false} 
+            underlineColorAndroid="transparent"
+            style={{ fontSize: 30, fontWeight: 'bold', color: "#000000ff" }}
+            animatedProps={animatedText}
+          />
+          <AnimatedTextInput
+            editable={false} 
+            underlineColorAndroid="transparent"
+            style={{ fontSize: 20, color: "#555" }}
+            animatedProps={animatedDataText}
+          />
+        </View>
+      )}
 
-            <AnimatedTextInput
-              editable={false} 
-              underlineColorAndroid="transparent"
-              style={{ fontSize: 20, color: "#555" }}
-              animatedProps={animatedDataText}
-            />
-          </View>
-        )}
+      {/* Mostrar último valor mesmo sem pressionar */}
+      {!isActive && (
+        <View style={graficos.Values}>
+          <AnimatedTextInput
+            style={{ fontSize: 30, fontWeight: 'bold', color: "#000000ff" }}
+          >
+            R$ {DATA[DATA.length - 1].price.toFixed(2)}
+          </AnimatedTextInput>
+          <Text style={graficos.DateText}>Hoje</Text>
+        </View>
+      )}
 
-        {/* Mostrar o ultimo valor mesmo quando não estiver pressionando o grafico */}
-
-        {!isActive && (
-          <View style={graficos.Values}>
-            <AnimatedTextInput
-              style={{ fontSize: 30, fontWeight: 'bold', color: "#000000ff" }}
-            >
-                R$ {DATA[DATA.length - 1].price.toFixed(2)}
-            </AnimatedTextInput>
-
-            <Text style={graficos.DateText}> Hoje </Text>
-          </View>
-        )}
       <View style={{ width: "100%", height: 350 }}>
-
-
         <CartesianChart 
           data={DATA} 
           xKey="day" 
@@ -93,14 +84,19 @@ export const HomeScreen = () => {
         >
           {({ points }) => (
             <>
-              <Line points={points.price} color="#FA4" strokeWidth={4} />
+              {/* Linha suavizada com Bézier cúbica */}
+              <Line 
+                points={points.price} 
+                color="#FA4" 
+                strokeWidth={4} 
+                curveType="monotoneX" 
+              />
               {isActive && (
                 <ToolTip x={state.x.position} y={state.y.price.position}/>
               )}
             </>
           )}
         </CartesianChart>
-
       </View>
     </View>
   )
