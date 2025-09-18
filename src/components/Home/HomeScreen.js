@@ -17,7 +17,12 @@ const DATA = [
 ]
 
 // Componente do "ponto ativo"
-function ToolTip({ x, y  }) {
+function ToolTip({ x, y, value }) {
+  let color = "#000"; 
+
+  if(value < 200) color = "#FF4D4D" //Quando ovalor for menor que 200 a cor vai ser Vermelha
+  else if(value < 500) color = "#FFD93D" // Quando o valor for menor que 500 a cor vai ser amarela
+  else color = "#6BCB77" // Quando o valor for menor que 500 a cor vai ser amarela
   return  <Circle cx={x} cy={y} r={10} color="#0066ff" style="stroke" strokeWidth={3} />;
 }
 
