@@ -62,7 +62,7 @@ export const HomeScreen = () => {
       {!isActive && (
         <View style={graficos.Values}>
           <AnimatedTextInput
-            style={{ fontSize: 30, fontWeight: 'bold', color: "#000000ff" }}
+            style={{ fontSize: 50, fontWeight: 'bold', color: "#000000ff" }}
           >
             R$ {DATA[DATA.length - 1].price.toFixed(2)}
           </AnimatedTextInput>
@@ -70,7 +70,7 @@ export const HomeScreen = () => {
         </View>
       )}
 
-      <View style={{ width: "100%", height: 350 }}>
+      <View style={graficos.graficoNumberOne}>
         <CartesianChart 
           data={DATA} 
           xKey="day" 
