@@ -5,12 +5,13 @@ export const graficos = StyleSheet.create({
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
-        // padding:30
+        padding:30,
+        backgroundColor: "#302f2fff"
     },
 
     graficoNumberOne: {
         width: "100%",
-        height: 350
+        height: 350,
     },
 
     Values: {
@@ -18,11 +19,13 @@ export const graficos = StyleSheet.create({
         top: 80,
         display: "flex",
         justifyContent: "center",
-        alignItems: "center"
+        alignItems: "center",
+        
     },
 
     DateText: {
-        fontSize: 20
+        fontSize: 20,
+        color:"#fff"
     }
 
 });

@@ -4,6 +4,7 @@ import { graficos } from '../Home/Home';
 import Animated, { useAnimatedProps } from 'react-native-reanimated';
 import { CartesianChart, Line, useChartPressState } from "victory-native";
 import { Circle } from '@shopify/react-native-skia';
+import { LinearGradient, vec } from "@shopify/react-native-skia";
 
 const DATA = [
   {day: new Date("2025-09-10").getTime(), price: 500},
@@ -16,7 +17,7 @@ const DATA = [
 ]
 
 // Componente do "ponto ativo"
-function ToolTip({ x, y }) {
+function ToolTip({ x, y  }) {
   return  <Circle cx={x} cy={y} r={10} color="#0066ff" style="stroke" strokeWidth={3} />;
 }
 
@@ -46,13 +47,13 @@ export const HomeScreen = () => {
           <AnimatedTextInput
             editable={false} 
             underlineColorAndroid="transparent"
-            style={{ fontSize: 50, fontWeight: 'bold', color: "#000000ff" }}
+            style={{ fontSize: 50, fontWeight: 'bold', color: "#fffbfbff" }}
             animatedProps={animatedText}
           />
           <AnimatedTextInput
             editable={false} 
             underlineColorAndroid="transparent"
-            style={{ fontSize: 20, color: "#555" }}
+            style={{ fontSize: 20, color: "#fffbfbff" }}
             animatedProps={animatedDataText}
           />
         </View>
@@ -62,8 +63,8 @@ export const HomeScreen = () => {
       {!isActive && (
         <View style={graficos.Values}>
           <AnimatedTextInput
-          editable={false} 
-            style={{ fontSize: 50, fontWeight: 'bold', color: "#000000ff" }}
+            editable={false} 
+            style={{ fontSize: 50, fontWeight: 'bold', color: "#fffbfbff" }}
           >
             R$ {DATA[DATA.length - 1].price.toFixed(2)}
           </AnimatedTextInput>
@@ -77,38 +78,38 @@ export const HomeScreen = () => {
       )}
 
       <View style={graficos.graficoNumberOne}>
-        <CartesianChart 
-          data={DATA} 
-          xKey="day" 
+        <CartesianChart
+          data={DATA}
+          xKey="day"
           yKeys={["price"]}
+          chartPressState={state}
           axisOptions={{
             tickCount: 5,
-            lineColor: "#ccc",       // cor dos eixos
-            lineWidth: 1,            // espessura da grade
-            labelColor: "#333",      // cor do texto nos eixos
-            gridColor: "#e0e0e0",    // cor da grade
-            gridWidth: 1,            // espessura da grade
-            labelOffset: { x: 5, y: 5 },
-            labelPosition: "outset"  // "inset" ou "outset"
+            gridColor: "#e0e0e0",
+            labelColor: "#555",
           }}
-          chartPressState={state}
         >
           {({ points }) => (
             <>
-              {/* Linha suavizada com Bézier cúbica */}
-              <Line 
-                points={points.price} 
-                color="#FA4" 
-                strokeWidth={5} 
-                
-                curveType="monotoneX" 
-              />
+              <Line points={points.price} strokeWidth={4} curveType="monotoneX">
+                <LinearGradient
+                  start={vec(0, 0)}
+                  end={vec(350, 0)} // ajuste com a largura do gráfico
+                  colors={["#FF6B6B", "#FFD93D", "#6BCB77 "]}
+                />
+              </Line>
+
               {isActive && (
-                <ToolTip x={state.x.position} y={state.y.price.position}/>
+                <ToolTip
+                  x={state.x.position}
+                  y={state.y.price.position}
+                  value={state.y.price.value.value.toFixed(2)}
+                />
               )}
             </>
           )}
         </CartesianChart>
+
       </View>
     </View>
   )
