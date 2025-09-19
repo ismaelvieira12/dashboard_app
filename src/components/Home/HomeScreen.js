@@ -102,8 +102,8 @@ export const HomeScreen = () => {
               <Line points={points.price} strokeWidth={4} curveType="monotoneX">
                 <LinearGradient
                   start={vec(0, 0)}
-                  end={vec(350, 0)} // ajuste com a largura do gráfico
-                  colors={["#FF6B6B", "#FFD93D", "#6BCB77 "]}
+                  end={vec(350, 0)} // largura do gráfico
+                  colors={["#FF6B6B", "#FFD93D", "#5fff75ff"]}
                 />
               </Line>
 
