@@ -3,7 +3,7 @@ import React from 'react'
 import { graficos } from '../Home/Home';
 import Animated, { useAnimatedProps } from 'react-native-reanimated';
 import { CartesianChart, Line, useChartPressState } from "victory-native";
-import { Circle } from '@shopify/react-native-skia';
+import { Group, Circle } from '@shopify/react-native-skia';
 import { LinearGradient, vec } from "@shopify/react-native-skia";
 
 const DATA = [
@@ -17,17 +17,22 @@ const DATA = [
 ]
 
 // Componente do "ponto ativo"
-function ToolTip({ x, y, value }) {
-  let color = "#000"; 
 
-  if(value < 200) color = "#FF4D4D" //Quando ovalor for menor que 200 a cor vai ser Vermelha
-  else if(value < 500) color = "#FFD93D" // Quando o valor for menor que 500 a cor vai ser amarela
-  else color = "#6BCB77" // Quando o valor for menor que 500 a cor vai ser amarela
-
+function GlowToolTip({ x, y }) {
   return (
-    <Circle cx={x} cy={y} r={12} color={color} style={'fill'}/>
-  )
+    <Group>
+      {/* Glow externo */}
+      <Circle cx={x} cy={y} r={30} color="rgba(0, 255, 200, 0.28)" />
+      <Circle cx={x} cy={y} r={20} color="rgba(0, 255, 200, 0.2)" />
+      <Circle cx={x} cy={y} r={12} color="rgba(0, 255, 200, 0.4)" />
+
+      {/* Círculo principal */}
+      <Circle cx={x} cy={y} r={8} color="#00FFD1" />
+      <Circle cx={x} cy={y} r={4} color="#fff" />
+    </Group>
+  );
 }
+
 
 const AnimatedTextInput = Animated.createAnimatedComponent(TextInput)
 
@@ -86,37 +91,39 @@ export const HomeScreen = () => {
       )}
 
       <View style={graficos.graficoNumberOne}>
-        <CartesianChart
-          data={DATA}
-          xKey="day"
-          yKeys={["price"]}
-          chartPressState={state}
-          axisOptions={{
-            tickCount: 5,
-            gridColor: "#e0e0e0",
-            labelColor: "#555",
-          }}
-        >
+       <CartesianChart
+        data={DATA}
+        xKey="day"
+        yKeys={["price"]}
+        chartPressState={state}
+        axisOptions={{
+          tickCount: 5,
+          gridColor: "#222",  // fundo escuro igual ao print
+          labelColor: "#aaa",
+        }}
+      >
           {({ points }) => (
             <>
+              {/* Linha degradê */}
               <Line points={points.price} strokeWidth={4} curveType="monotoneX">
                 <LinearGradient
                   start={vec(0, 0)}
-                  end={vec(350, 0)} // largura do gráfico
-                  colors={["#FF6B6B", "#FFD93D", "#5fff75ff"]}
+                  end={vec(350, 0)}
+                  colors={["#FF6B6B", "#FFD93D", "#00ff55ff"]}
                 />
               </Line>
 
+              {/* Tooltip com glow */}
               {isActive && (
-                <ToolTip
+                <GlowToolTip
                   x={state.x.position}
                   y={state.y.price.position}
-                  value={state.y.price.value.value.toFixed(2)}
                 />
               )}
             </>
           )}
         </CartesianChart>
+
         <View style={graficos.boxInforBtn}>
           <View></View>
           <View></View>
