@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native'
-import React from 'react'
+import React, { use } from 'react'
 import { graficos } from '../Home/Home';
 import Animated, { useAnimatedProps } from 'react-native-reanimated';
 import { CartesianChart, Line, useChartPressState } from "victory-native";
@@ -63,7 +63,7 @@ const AnimatedTextInput = Animated.createAnimatedComponent(TextInput)
 
 export const HomeScreen = () => {
   const { state, isActive } = useChartPressState({ x: 0, y: { price: 0 } })
-
+  const { activeBtn, setActiveNtn} = useState(0); // Estado para o botão ativo
   const animatedText = useAnimatedProps(() => {
     return {
       text: `R$ ${state.y.price.value.value.toFixed(2)}`
