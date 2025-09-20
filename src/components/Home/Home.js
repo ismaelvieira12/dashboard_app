@@ -3,15 +3,18 @@ import { StyleSheet } from "react-native";
 export const graficos = StyleSheet.create({
     containerGra: {
         flex: 1,
-        justifyContent: "space-around",
+        justifyContent: "center",
         alignItems: "center",
-        padding:30,
         backgroundColor: "#302f2fff"
     },
 
     graficoNumberOne: {
         width: "100%",
         height: 350,
+        marginTop: 40,
+        backgroundColor: "#3b3a3aff",
+        borderRadius: 20,
+        padding: 10,
     },
     
     Values: {
@@ -30,6 +33,19 @@ export const graficos = StyleSheet.create({
     
     boxInforBtn: {
         backgroundColor: "#886a6aff",
+        width: "90%",
+        borderRadius: 10,
+        marginTop: 40,
+        padding: 10,
+        flexDirection: "row",
+        justifyContent: "space-between",
+    },
+
+    boxMes: {
+        backgroundColor: "#fffbfbff",
+        width: 70,
+        height: 50,
+        borderRadius: 5,
     }
 
 });

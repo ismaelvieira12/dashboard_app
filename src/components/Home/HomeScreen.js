@@ -124,14 +124,14 @@ export const HomeScreen = () => {
           )}
         </CartesianChart>
 
-        <View style={graficos.boxInforBtn}>
-          <View></View>
-          <View></View>
-          <View></View>
-          <View></View>
-        </View>
       
       </View>
+        <View style={graficos.boxInforBtn}>
+          <View style={graficos.boxMes}></View>
+          <View style={graficos.boxMes}></View>
+          <View style={graficos.boxMes}></View>
+          <View style={graficos.boxMes}></View>
+        </View>
     </View>
   )
 }
