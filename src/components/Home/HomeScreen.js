@@ -131,15 +131,16 @@ export const HomeScreen = () => {
             <Text style={graficos.TextMes}>1M</Text>
           </TouchableOpacity>
           <TouchableOpacity style={graficos.boxMes}>
-            <Text>1M</Text>
+            <Text style={graficos.TextMes}>1M</Text>
           </TouchableOpacity>
           <TouchableOpacity style={graficos.boxMes}>
-            <Text>1M</Text>
+            <Text style={graficos.TextMes}>1M</Text>
           </TouchableOpacity>
           <TouchableOpacity style={graficos.boxMes}>
-            <Text>1M</Text>
+            <Text style={graficos.TextMes}>1M</Text>
           </TouchableOpacity>
         </View>
+        <View style={graficos.boxDash}></View>
     </View>
   )
 }
