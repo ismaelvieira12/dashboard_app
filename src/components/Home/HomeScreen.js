@@ -1,11 +1,26 @@
-import { Text, View, TextInput, TouchableOpacity, Image } from 'react-native'
-import React, { useState } from 'react'
-import { graficos } from '../Home/Home';
-import Animated, { useAnimatedProps } from 'react-native-reanimated';
+import React, { useState } from "react";
+import {
+  Text,
+  View,
+  TextInput,
+  TouchableOpacity,
+  Image,
+  Dimensions,
+} from "react-native";
+import { graficos } from "../Home/Home";
+import Animated, { useAnimatedProps } from "react-native-reanimated";
 import { CartesianChart, Line, useChartPressState } from "victory-native";
-import { Group, Circle } from '@shopify/react-native-skia';
-import { LinearGradient, vec } from "@shopify/react-native-skia";
-import { StatusBar } from 'expo-status-bar';
+import {
+  Group,
+  Circle,
+  Canvas,
+  Path,
+  LinearGradient,
+  vec,
+} from "@shopify/react-native-skia";
+import { StatusBar } from "expo-status-bar";
+
+const { width: SCREEN_WIDTH } = Dimensions.get("window");
 
 const DATA = [
   { day: new Date("2025-09-01").getTime(), price: 734 },
@@ -53,24 +68,53 @@ function GlowToolTip({ x, y }) {
   );
 }
 
-const AnimatedTextInput = Animated.createAnimatedComponent(TextInput)
+// --- Wave S separator com Skia ---
+function WaveS({ width = SCREEN_WIDTH, height = 120, colors = ["#ff4e02ff", "#FFD93D", "#00ff55ff"] }) {
+  // cria o path em S que vai do canto inferior esquerdo ao canto superior direito
+  // você pode ajustar os fatores pra mudar "intensidade" da curva
+  const x1 = width * 0.15;
+  const x2 = width * 0.25;
+  const x3 = width * 0.4;
+  const x4 = width * 0.6;
+  const x5 = width * 0.75;
+
+  const path = `
+    M 0 ${height}
+    C ${x1} ${height} ${x2} 0 ${x3} ${height * 0.2}
+    C ${x4} ${height * 0.6} ${x5} 0 ${width} 0
+    L ${width} ${height}
+    L 0 ${height}
+    Z
+  `;
+
+  return (
+    <Canvas style={{ width: width, height: height }}>
+      <Path path={path}>
+        <LinearGradient start={vec(0, 0)} end={vec(width, 0)} colors={colors} />
+      </Path>
+    </Canvas>
+  );
+}
+
+const AnimatedTextInput = Animated.createAnimatedComponent(TextInput);
 
 export const HomeScreen = () => {
-  const { state, isActive } = useChartPressState({ x: 0, y: { price: 0 } })
+  const { state, isActive } = useChartPressState({ x: 0, y: { price: 0 } });
   const [activeBtn, setActiveBtn] = useState(0); // controla botão ativo
 
   const animatedText = useAnimatedProps(() => {
+    // mantenho sua lógica original (se quiser que eu troque .value.value pra .value eu faço)
     return {
-      text: `R$ ${state.y.price.value.value.toFixed(2)}`
-    }
-  })
+      text: `R$ ${state.y.price.value.value.toFixed(2)}`,
+    };
+  });
 
   const animatedDataText = useAnimatedProps(() => {
-    const date = new Date(state.x.value.value)
+    const date = new Date(state.x.value.value);
     return {
-      text: `${date.toLocaleDateString("pt-BR")}`
-    }
-  })
+      text: `${date.toLocaleDateString("pt-BR")}`,
+    };
+  });
 
   const botoes = ["1M", "3M", "6M", "1A"]; // rótulos dos botões
 
@@ -80,13 +124,13 @@ export const HomeScreen = () => {
       {isActive && (
         <View style={graficos.Values}>
           <AnimatedTextInput
-            editable={false} 
+            editable={false}
             underlineColorAndroid="transparent"
-            style={{ fontSize: 50, fontWeight: 'bold', color: "#fffbfbff" }}
+            style={{ fontSize: 50, fontWeight: "bold", color: "#fffbfbff" }}
             animatedProps={animatedText}
           />
           <AnimatedTextInput
-            editable={false} 
+            editable={false}
             underlineColorAndroid="transparent"
             style={{ fontSize: 20, color: "#fffbfbff" }}
             animatedProps={animatedDataText}
@@ -98,8 +142,8 @@ export const HomeScreen = () => {
       {!isActive && (
         <View style={graficos.Values}>
           <AnimatedTextInput
-            editable={false} 
-            style={{ fontSize: 50, fontWeight: 'bold', color: "#fffbfbff" }}
+            editable={false}
+            style={{ fontSize: 50, fontWeight: "bold", color: "#fffbfbff" }}
           >
             R$ {DATA[DATA.length - 1].price.toFixed(2)}
           </AnimatedTextInput>
@@ -133,9 +177,7 @@ export const HomeScreen = () => {
                 />
               </Line>
 
-              {isActive && (
-                <GlowToolTip x={state.x.position} y={state.y.price.position} />
-              )}
+              {isActive && <GlowToolTip x={state.x.position} y={state.y.price.position} />}
             </>
           )}
         </CartesianChart>
@@ -146,29 +188,21 @@ export const HomeScreen = () => {
         {botoes.map((label, index) => (
           <TouchableOpacity
             key={index}
-            style={[
-              graficos.boxMes,
-              activeBtn === index && graficos.boxMesAtivo, // aplica estilo se ativo
-            ]}
+            style={[graficos.boxMes, activeBtn === index && graficos.boxMesAtivo]}
             onPress={() => setActiveBtn(index)}
           >
-            <Text
-              style={[
-                graficos.TextMes,
-                activeBtn === index && graficos.TextMesAtivo,
-              ]}
-            >
-              {label}
-            </Text>
+            <Text style={[graficos.TextMes, activeBtn === index && graficos.TextMesAtivo]}>{label}</Text>
           </TouchableOpacity>
         ))}
       </View>
 
-     <View style={graficos.boxDash}>
-        <Image  
-          style={graficos.imagemDash}
-          source={require('../../../assets/logo.png')}
-        />
+      {/* boxDash: imagem em cima, onda (Skia) e botão em baixo */}
+      <View style={graficos.boxDash}>
+        <Image style={graficos.imagemDash} source={require("../../../assets/logo.png")} />
+
+        {/* onda Skia S — fica entre a logo e o botão */}
+        <WaveS width={SCREEN_WIDTH - 40} height={120} colors={["#ff4e02ff", "#FFD93D", "#00ff55ff"]} />
+
         <TouchableOpacity style={graficos.buttonDash}>
           <Text style={graficos.textBtnDash}>Ver Dashboard</Text>
         </TouchableOpacity>
@@ -176,5 +210,5 @@ export const HomeScreen = () => {
 
       <StatusBar style="light" />
     </View>
-  )
-}
+  );
+};
