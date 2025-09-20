@@ -5,6 +5,7 @@ import Animated, { useAnimatedProps } from 'react-native-reanimated';
 import { CartesianChart, Line, useChartPressState } from "victory-native";
 import { Group, Circle } from '@shopify/react-native-skia';
 import { LinearGradient, vec } from "@shopify/react-native-skia";
+import { StatusBar } from 'expo-status-bar';
 
 const DATA = [
   { day: new Date("2025-09-01").getTime(), price: 734 },
@@ -166,6 +167,7 @@ export const HomeScreen = () => {
           </TouchableOpacity>
         </View>
         <View style={graficos.boxDash}></View>
+        <StatusBar style='light'/>
     </View>
   )
 }
