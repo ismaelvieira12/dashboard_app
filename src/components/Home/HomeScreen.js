@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native'
+import { Text, View, TextInput, TouchableOpacity, Image } from 'react-native'
 import React, { useState } from 'react'
 import { graficos } from '../Home/Home';
 import Animated, { useAnimatedProps } from 'react-native-reanimated';
@@ -165,6 +165,10 @@ export const HomeScreen = () => {
       </View>
 
       <View style={graficos.boxDash}>
+        <Image  
+          style={graficos.imagemDash}
+          source={require('../../../assets/logo.png')}
+        />
         <TouchableOpacity style={graficos.buttonDash}>
           <Text style={graficos.textBtnDash}>Ver Dashboard</Text>
         </TouchableOpacity>

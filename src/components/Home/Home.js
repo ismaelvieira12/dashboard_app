@@ -80,6 +80,14 @@ export const graficos = StyleSheet.create({
         padding: 20,
         borderRadius: 20,
     },
+    imagemDash: {
+        width: 150,
+        height: 150,
+        resizeMode: 'contain',
+        position: "absolute",
+        top: -25,
+        left: 9
+    },
     buttonDash: {
         position: "absolute",
         bottom: 20,
