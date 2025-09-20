@@ -6,8 +6,6 @@ import { CartesianChart, Line, useChartPressState } from "victory-native";
 import { Group, Circle } from '@shopify/react-native-skia';
 import { LinearGradient, vec } from "@shopify/react-native-skia";
 import { StatusBar } from 'expo-status-bar';
-import Svg, { Path, Defs, LinearGradient, Stop } from "react-native-svg";
-
 
 const DATA = [
   { day: new Date("2025-09-01").getTime(), price: 734 },
@@ -166,27 +164,11 @@ export const HomeScreen = () => {
         ))}
       </View>
 
-      <View style={graficos.boxDash}>
+     <View style={graficos.boxDash}>
         <Image  
           style={graficos.imagemDash}
           source={require('../../../assets/logo.png')}
         />
-
-        {/* separador em onda */}
-        <Svg height={80} width="100%" viewBox="0 0 1440 320">
-          <Defs>
-            <LinearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
-              <Stop offset="0" stopColor="#ff4e02ff" stopOpacity="1" />
-              <Stop offset="1" stopColor="#00ff55ff" stopOpacity="1" />
-            </LinearGradient>
-          </Defs>
-
-          <Path
-            fill="url(#grad)"
-            d="M0,160 C360,320 1080,0 1440,160 L1440,320 L0,320 Z"
-          />
-        </Svg>
-
         <TouchableOpacity style={graficos.buttonDash}>
           <Text style={graficos.textBtnDash}>Ver Dashboard</Text>
         </TouchableOpacity>
