@@ -120,6 +120,7 @@ export const HomeScreen = () => {
         xKey="day"
         yKeys={["price"]}
         chartPressState={state}
+        domainPadding={{ left: 20, right: 20, top: 20, bottom: 20 }} // folga extra
         axisOptions={{
           tickCount: 5,
           gridColor: "#222",  // fundo escuro igual ao print
