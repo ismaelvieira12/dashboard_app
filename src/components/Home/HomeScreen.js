@@ -127,10 +127,18 @@ export const HomeScreen = () => {
       
       </View>
         <View style={graficos.boxInforBtn}>
-          <View style={graficos.boxMes}></View>
-          <View style={graficos.boxMes}></View>
-          <View style={graficos.boxMes}></View>
-          <View style={graficos.boxMes}></View>
+          <View style={graficos.boxMes}>
+            <Text style={graficos.TextMes}>1M</Text>
+          </View>
+          <View style={graficos.boxMes}>
+            <Text>1M</Text>
+          </View>
+          <View style={graficos.boxMes}>
+            <Text>1M</Text>
+          </View>
+          <View style={graficos.boxMes}>
+            <Text>1M</Text>
+          </View>
         </View>
     </View>
   )

@@ -32,7 +32,7 @@ export const graficos = StyleSheet.create({
     },
     
     boxInforBtn: {
-        backgroundColor: "#886a6aff",
+        backgroundColor: "#3b3a3aff",
         width: "90%",
         borderRadius: 10,
         marginTop: 40,
@@ -44,8 +44,16 @@ export const graficos = StyleSheet.create({
     boxMes: {
         backgroundColor: "#fffbfbff",
         width: 70,
-        height: 50,
+        height: 40,
         borderRadius: 5,
-    }
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+    },
+
+    TextMes: {
+        fontSize: 18,
+        fontWeight: "bold",
+    },
 
 });
