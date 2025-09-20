@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TextInput } from 'react-native'
+import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { graficos } from '../Home/Home';
 import Animated, { useAnimatedProps } from 'react-native-reanimated';
@@ -128,16 +128,16 @@ export const HomeScreen = () => {
       </View>
         <View style={graficos.boxInforBtn}>
           <View style={graficos.boxMes}>
-            <Text style={graficos.TextMes}>1M</Text>
+            <TouchableOpacity style={graficos.TextMes}>1M</TouchableOpacity>
           </View>
           <View style={graficos.boxMes}>
-            <Text>1M</Text>
+            <TouchableOpacity>1M</TouchableOpacity>
           </View>
           <View style={graficos.boxMes}>
-            <Text>1M</Text>
+            <TouchableOpacity>1M</TouchableOpacity>
           </View>
           <View style={graficos.boxMes}>
-            <Text>1M</Text>
+            <TouchableOpacity>1M</TouchableOpacity>
           </View>
         </View>
     </View>
