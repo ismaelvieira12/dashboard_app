@@ -58,7 +58,8 @@ export const graficos = StyleSheet.create({
     },
 
     boxMesAtivo: {
-        backgroundColor: "#00ff55ff",
+        backgroundColor: "#05ac3dff",
+        borderRadius: 20,
     },
     
     boxDash: {
