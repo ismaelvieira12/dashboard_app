@@ -14,14 +14,14 @@ const DATA = [
   { day: new Date("2025-09-05").getTime(), price: 978 },
   { day: new Date("2025-09-06").getTime(), price: 543 },
   { day: new Date("2025-09-07").getTime(), price: 65 },
-  { day: new Date("2025-09-08").getTime(), price: 835 },
+  { day: new Date("2025-09-08").getTime(), price: 0 },
   { day: new Date("2025-09-09").getTime(), price: 312 },
   { day: new Date("2025-09-10").getTime(), price: 999 },
   { day: new Date("2025-09-11").getTime(), price: 451 },
   { day: new Date("2025-09-12").getTime(), price: 289 },
   { day: new Date("2025-09-13").getTime(), price: 876 },
   { day: new Date("2025-09-14").getTime(), price: 654 },
-  { day: new Date("2025-09-15").getTime(), price: 345 },
+  { day: new Date("2025-09-15").getTime(), price: 0 },
   { day: new Date("2025-09-16").getTime(), price: 721 },
   { day: new Date("2025-09-17").getTime(), price: 432 },
   { day: new Date("2025-09-18").getTime(), price: 812 },
@@ -133,7 +133,7 @@ export const HomeScreen = () => {
                 <LinearGradient
                   start={vec(0, 0)}
                   end={vec(350, 0)}
-                  colors={["#FF6B6B", "#FFD93D", "#00ff55ff"]}
+                  colors={["#ff4e02ff", "#FFD93D", "#00ff55ff"]}
                 />
               </Line>
 
