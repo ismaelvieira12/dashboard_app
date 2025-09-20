@@ -76,6 +76,7 @@ export const HomeScreen = () => {
 
   return (
     <View style={graficos.containerGra}>
+      <TouchableOpacity style={graficos.btnBackHome}></TouchableOpacity>
       {/* Mostrar valores quando pressiona */}
       {isActive && (
         <View style={graficos.Values}>

@@ -8,6 +8,8 @@ export const graficos = StyleSheet.create({
         backgroundColor: "#02092fff"
     },
 
+    
+
     graficoNumberOne: {
         width: "100%",
         height: 350,
@@ -36,7 +38,7 @@ export const graficos = StyleSheet.create({
         width: "90%",
         borderRadius: 30,
         marginTop: 40,
-        padding: 20,
+        padding: 15,
         flexDirection: "row",
         justifyContent: "space-between",
     },
@@ -60,6 +62,11 @@ export const graficos = StyleSheet.create({
     boxMesAtivo: {
         backgroundColor: "#05ac3dff",
         borderRadius: 20,
+    },
+    TextMesAtivo: {
+        color: "#02092fff",
+        fontWeight: "bold",
+        fontSize: 18,
     },
     
     boxDash: {
