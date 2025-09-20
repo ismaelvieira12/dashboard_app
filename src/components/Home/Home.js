@@ -8,8 +8,6 @@ export const graficos = StyleSheet.create({
         backgroundColor: "#02092fff"
     },
 
-    
-
     graficoNumberOne: {
         width: "100%",
         height: 350,
@@ -62,6 +60,11 @@ export const graficos = StyleSheet.create({
     boxMesAtivo: {
         backgroundColor: "#05ac3dff",
         borderRadius: 20,
+        elevation: 5,
+        shadowColor: "#27d160ff",
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
     },
     TextMesAtivo: {
         color: "#02092fff",
@@ -84,6 +87,13 @@ export const graficos = StyleSheet.create({
         padding: 10,
         borderRadius: 15,
         backgroundColor: "#ff4e02ff",
+        // Box shadow for iOS
+        shadowColor: "#c44a4aff",
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        // Box shadow for Android
+        elevation: 5,
     },
     textBtnDash: {
         fontSize: 16,
