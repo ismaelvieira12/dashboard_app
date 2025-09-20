@@ -7,14 +7,38 @@ import { Group, Circle } from '@shopify/react-native-skia';
 import { LinearGradient, vec } from "@shopify/react-native-skia";
 
 const DATA = [
-  {day: new Date("2025-09-10").getTime(), price: 500},
-  {day: new Date("2025-09-11").getTime(), price: 250},
-  {day: new Date("2025-09-12").getTime(), price: 600},
-  {day: new Date("2025-09-13").getTime(), price: 720},
-  {day: new Date("2025-09-14").getTime(), price: 430},
-  {day: new Date("2025-09-15").getTime(), price: 10},
-  {day: new Date("2025-09-16").getTime(), price: 980},
-]
+  { day: new Date("2025-09-01").getTime(), price: 734 },
+  { day: new Date("2025-09-02").getTime(), price: 412 },
+  { day: new Date("2025-09-03").getTime(), price: 856 },
+  { day: new Date("2025-09-04").getTime(), price: 123 },
+  { day: new Date("2025-09-05").getTime(), price: 978 },
+  { day: new Date("2025-09-06").getTime(), price: 543 },
+  { day: new Date("2025-09-07").getTime(), price: 65 },
+  { day: new Date("2025-09-08").getTime(), price: 835 },
+  { day: new Date("2025-09-09").getTime(), price: 312 },
+  { day: new Date("2025-09-10").getTime(), price: 999 },
+  { day: new Date("2025-09-11").getTime(), price: 451 },
+  { day: new Date("2025-09-12").getTime(), price: 289 },
+  { day: new Date("2025-09-13").getTime(), price: 876 },
+  { day: new Date("2025-09-14").getTime(), price: 654 },
+  { day: new Date("2025-09-15").getTime(), price: 345 },
+  { day: new Date("2025-09-16").getTime(), price: 721 },
+  { day: new Date("2025-09-17").getTime(), price: 432 },
+  { day: new Date("2025-09-18").getTime(), price: 812 },
+  { day: new Date("2025-09-19").getTime(), price: 278 },
+  { day: new Date("2025-09-20").getTime(), price: 915 },
+  { day: new Date("2025-09-21").getTime(), price: 601 },
+  { day: new Date("2025-09-22").getTime(), price: 73 },
+  { day: new Date("2025-09-23").getTime(), price: 842 },
+  { day: new Date("2025-09-24").getTime(), price: 455 },
+  { day: new Date("2025-09-25").getTime(), price: 932 },
+  { day: new Date("2025-09-26").getTime(), price: 512 },
+  { day: new Date("2025-09-27").getTime(), price: 689 },
+  { day: new Date("2025-09-28").getTime(), price: 230 },
+  { day: new Date("2025-09-29").getTime(), price: 799 },
+  { day: new Date("2025-09-30").getTime(), price: 380 },
+];
+
 
 // Componente do "ponto ativo"
 

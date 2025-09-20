@@ -11,7 +11,7 @@ export const graficos = StyleSheet.create({
     graficoNumberOne: {
         width: "100%",
         height: 350,
-        marginTop: 150,
+        marginTop: 200,
         // backgroundColor: "#3b3a3aff",
         borderRadius: 20,
         padding: 10,
@@ -58,7 +58,7 @@ export const graficos = StyleSheet.create({
     },
     boxDash: {
         width: "95%",
-        height: 200,
+        height: 160,
         marginTop: 20,
         backgroundColor: "#1a1830ff",
         padding: 20,
