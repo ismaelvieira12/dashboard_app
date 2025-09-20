@@ -14,7 +14,7 @@ export const graficos = StyleSheet.create({
         marginTop: 40,
         // backgroundColor: "#3b3a3aff",
         borderRadius: 20,
-        padding: 40,
+        padding: 10,
     },
     
     Values: {
@@ -32,19 +32,19 @@ export const graficos = StyleSheet.create({
     },
     
     boxInforBtn: {
-        backgroundColor: "#3b3a3aff",
-        width: "90%",
+        backgroundColor: "#1a1830ff",
+        width: "95%",
         borderRadius: 10,
         marginTop: 40,
-        padding: 10,
+        padding: 20,
         flexDirection: "row",
         justifyContent: "space-between",
     },
 
     boxMes: {
-        backgroundColor: "#fffbfbff",
+        // backgroundColor: "#fffbfbff",
         width: 70,
-        height: 40,
+        height: 50,
         borderRadius: 5,
         display: "flex",
         justifyContent: "center",
@@ -54,6 +54,7 @@ export const graficos = StyleSheet.create({
     TextMes: {
         fontSize: 18,
         fontWeight: "bold",
+        color: "#fffbfbff"
     },
 
 });
