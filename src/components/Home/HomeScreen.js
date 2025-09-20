@@ -22,7 +22,7 @@ function GlowToolTip({ x, y }) {
   return (
     <Group>
       {/* Glow externo */}
-      <Circle cx={x} cy={y} r={30} color="rgba(0, 255, 200, 0.28)" />
+      <Circle cx={x} cy={y} r={30} color="rgba(0, 255, 200, 0.11)" />
       <Circle cx={x} cy={y} r={20} color="rgba(0, 255, 200, 0.2)" />
       <Circle cx={x} cy={y} r={12} color="rgba(0, 255, 200, 0.4)" />
 
