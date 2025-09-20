@@ -76,6 +76,15 @@ export const graficos = StyleSheet.create({
         backgroundColor: "#1a1830ff",
         padding: 20,
         borderRadius: 20,
+    },
+    buttonDash: {
+        position: "absolute",
+        bottom: 20,
+        right: 20,
+        padding: 10,
+        borderRadius: 15,
+        backgroundColor: "#fffbfbff",
+    },
+    btnBackHome: { 
     }
-
 });

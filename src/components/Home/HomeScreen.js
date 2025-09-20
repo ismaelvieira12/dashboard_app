@@ -76,7 +76,6 @@ export const HomeScreen = () => {
 
   return (
     <View style={graficos.containerGra}>
-      <TouchableOpacity style={graficos.btnBackHome}></TouchableOpacity>
       {/* Mostrar valores quando pressiona */}
       {isActive && (
         <View style={graficos.Values}>
@@ -165,7 +164,11 @@ export const HomeScreen = () => {
         ))}
       </View>
 
-      <View style={graficos.boxDash}></View>
+      <View style={graficos.boxDash}>
+        <TouchableOpacity style={graficos.buttonDash}>
+          <Text style={graficos.textBtnDash}>Ver Detalhes</Text>
+        </TouchableOpacity>
+      </View>
       <StatusBar style="light" />
     </View>
   )
