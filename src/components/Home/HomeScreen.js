@@ -127,18 +127,18 @@ export const HomeScreen = () => {
       
       </View>
         <View style={graficos.boxInforBtn}>
-          <View style={graficos.boxMes}>
-            <TouchableOpacity style={graficos.TextMes}>1M</TouchableOpacity>
-          </View>
-          <View style={graficos.boxMes}>
-            <TouchableOpacity>1M</TouchableOpacity>
-          </View>
-          <View style={graficos.boxMes}>
-            <TouchableOpacity>1M</TouchableOpacity>
-          </View>
-          <View style={graficos.boxMes}>
-            <TouchableOpacity>1M</TouchableOpacity>
-          </View>
+          <TouchableOpacity style={graficos.boxMes}>
+            <Text style={graficos.TextMes}>1M</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={graficos.boxMes}>
+            <Text>1M</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={graficos.boxMes}>
+            <Text>1M</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={graficos.boxMes}>
+            <Text>1M</Text>
+          </TouchableOpacity>
         </View>
     </View>
   )

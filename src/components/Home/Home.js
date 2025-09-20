@@ -5,16 +5,16 @@ export const graficos = StyleSheet.create({
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: "#302f2fff"
+        backgroundColor: "#02092fff"
     },
 
     graficoNumberOne: {
         width: "100%",
         height: 350,
         marginTop: 40,
-        backgroundColor: "#3b3a3aff",
+        // backgroundColor: "#3b3a3aff",
         borderRadius: 20,
-        padding: 10,
+        padding: 40,
     },
     
     Values: {
