@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native'
-import React, { use } from 'react'
+import React, { useState } from 'react'
 import { graficos } from '../Home/Home';
 import Animated, { useAnimatedProps } from 'react-native-reanimated';
 import { CartesianChart, Line, useChartPressState } from "victory-native";
@@ -40,30 +40,25 @@ const DATA = [
   { day: new Date("2025-09-30").getTime(), price: 380 },
 ];
 
-
 // Componente do "ponto ativo"
-
 function GlowToolTip({ x, y }) {
   return (
     <Group>
-      {/* Glow externo */}
       <Circle cx={x} cy={y} r={30} color="rgba(0, 255, 200, 0.11)" />
       <Circle cx={x} cy={y} r={20} color="rgba(0, 255, 200, 0.2)" />
       <Circle cx={x} cy={y} r={12} color="rgba(0, 255, 200, 0.4)" />
-
-      {/* Círculo principal */}
       <Circle cx={x} cy={y} r={8} color="#00FFD1" />
       <Circle cx={x} cy={y} r={4} color="#fff" />
     </Group>
   );
 }
 
-
 const AnimatedTextInput = Animated.createAnimatedComponent(TextInput)
 
 export const HomeScreen = () => {
   const { state, isActive } = useChartPressState({ x: 0, y: { price: 0 } })
-  const { activeBtn, setActiveNtn} = useState(0); // Estado para o botão ativo
+  const [activeBtn, setActiveBtn] = useState(0); // controla botão ativo
+
   const animatedText = useAnimatedProps(() => {
     return {
       text: `R$ ${state.y.price.value.value.toFixed(2)}`
@@ -76,6 +71,8 @@ export const HomeScreen = () => {
       text: `${date.toLocaleDateString("pt-BR")}`
     }
   })
+
+  const botoes = ["1M", "3M", "6M", "1A"]; // rótulos dos botões
 
   return (
     <View style={graficos.containerGra}>
@@ -107,30 +104,27 @@ export const HomeScreen = () => {
             R$ {DATA[DATA.length - 1].price.toFixed(2)}
           </AnimatedTextInput>
 
-          <AnimatedTextInput
-            editable={false} 
-          >
+          <AnimatedTextInput editable={false}>
             <Text style={graficos.DateText}>Hoje</Text>
           </AnimatedTextInput>
         </View>
       )}
 
       <View style={graficos.graficoNumberOne}>
-       <CartesianChart
-        data={DATA}
-        xKey="day"
-        yKeys={["price"]}
-        chartPressState={state}
-        domainPadding={{ left: 20, right: 20, top: 20, bottom: 20 }} // folga extra
-        axisOptions={{
-          tickCount: 5,
-          gridColor: "#222",  // fundo escuro igual ao print
-          labelColor: "#aaa",
-        }}
-      >
+        <CartesianChart
+          data={DATA}
+          xKey="day"
+          yKeys={["price"]}
+          chartPressState={state}
+          domainPadding={{ left: 20, right: 20, top: 20, bottom: 20 }}
+          axisOptions={{
+            tickCount: 5,
+            gridColor: "#222",
+            labelColor: "#aaa",
+          }}
+        >
           {({ points }) => (
             <>
-              {/* Linha degradê */}
               <Line points={points.price} strokeWidth={4} curveType="monotoneX">
                 <LinearGradient
                   start={vec(0, 0)}
@@ -139,35 +133,39 @@ export const HomeScreen = () => {
                 />
               </Line>
 
-              {/* Tooltip com glow */}
               {isActive && (
-                <GlowToolTip
-                  x={state.x.position}
-                  y={state.y.price.position}
-                />
+                <GlowToolTip x={state.x.position} y={state.y.price.position} />
               )}
             </>
           )}
         </CartesianChart>
-
-      
       </View>
-        <View style={graficos.boxInforBtn}>
-          <TouchableOpacity style={graficos.boxMes}>
-            <Text style={graficos.TextMes}>1M</Text>
+
+      {/* Botões */}
+      <View style={graficos.boxInforBtn}>
+        {botoes.map((label, index) => (
+          <TouchableOpacity
+            key={index}
+            style={[
+              graficos.boxMes,
+              activeBtn === index && graficos.boxMesAtivo, // aplica estilo se ativo
+            ]}
+            onPress={() => setActiveBtn(index)}
+          >
+            <Text
+              style={[
+                graficos.TextMes,
+                activeBtn === index && graficos.TextMesAtivo,
+              ]}
+            >
+              {label}
+            </Text>
           </TouchableOpacity>
-          <TouchableOpacity style={graficos.boxMes}>
-            <Text style={graficos.TextMes}>1M</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={graficos.boxMes}>
-            <Text style={graficos.TextMes}>1M</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={graficos.boxMes}>
-            <Text style={graficos.TextMes}>1M</Text>
-          </TouchableOpacity>
-        </View>
-        <View style={graficos.boxDash}></View>
-        <StatusBar style='light'/>
+        ))}
+      </View>
+
+      <View style={graficos.boxDash}></View>
+      <StatusBar style="light" />
     </View>
   )
 }
