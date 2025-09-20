@@ -73,6 +73,7 @@ export const graficos = StyleSheet.create({
     },
     
     boxDash: {
+        position: "relative",
         width: "95%",
         height: 160,
         marginTop: 20,
