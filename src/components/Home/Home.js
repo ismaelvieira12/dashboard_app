@@ -83,8 +83,11 @@ export const graficos = StyleSheet.create({
         right: 20,
         padding: 10,
         borderRadius: 15,
-        backgroundColor: "#fffbfbff",
+        backgroundColor: "#ff4e02ff",
     },
-    btnBackHome: { 
+    textBtnDash: {
+        fontSize: 16,
+        fontWeight: "bold",
+        color: "#ffffffff"
     }
 });

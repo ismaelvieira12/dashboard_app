@@ -166,7 +166,7 @@ export const HomeScreen = () => {
 
       <View style={graficos.boxDash}>
         <TouchableOpacity style={graficos.buttonDash}>
-          <Text style={graficos.textBtnDash}>Ver Detalhes</Text>
+          <Text style={graficos.textBtnDash}>Ver Dashboard</Text>
         </TouchableOpacity>
       </View>
       <StatusBar style="light" />
