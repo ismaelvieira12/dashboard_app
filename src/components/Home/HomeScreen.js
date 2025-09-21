@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState } from "react";
 import {
   Text,
   View,
@@ -19,7 +19,6 @@ import {
   vec,
 } from "@shopify/react-native-skia";
 import { StatusBar } from "expo-status-bar";
-import { useNavigation } from "@react-navigation/native";
 
 const { width: SCREEN_WIDTH } = Dimensions.get("window");
 
@@ -56,59 +55,40 @@ const DATA = [
   { day: new Date("2025-09-30").getTime(), price: 380 },
 ];
 
-// Tooltip simples com glow
-function GlowToolTip({ x, y, color = "#00FFD1", showValue, value }) {
+// Componente do "ponto ativo"
+function GlowToolTip({ x, y }) {
   return (
     <Group>
-      <Circle cx={x} cy={y} r={30} color={`${color}1B`} /> {/* 0x1B ≈ 11% */}
-      <Circle cx={x} cy={y} r={20} color={`${color}33`} />
-      <Circle cx={x} cy={y} r={12} color={`${color}66`} />
-      <Circle cx={x} cy={y} r={8} color={color} />
+      <Circle cx={x} cy={y} r={30} color="rgba(0, 255, 200, 0.11)" />
+      <Circle cx={x} cy={y} r={20} color="rgba(0, 255, 200, 0.2)" />
+      <Circle cx={x} cy={y} r={12} color="rgba(0, 255, 200, 0.4)" />
+      <Circle cx={x} cy={y} r={8} color="#00FFD1" />
       <Circle cx={x} cy={y} r={4} color="#fff" />
-      {showValue && typeof value === "number" && (
-        <Path
-          // Pequeno "label" retângulo desenhado com Path + texto, mas para simplicidade usamos texto do RN abaixo
-          path={`M ${x + 12} ${y - 20} L ${x + 120} ${y - 20} L ${x + 120} ${y - 40} L ${x + 12} ${y - 40} Z`}
-        />
-      )}
     </Group>
   );
 }
 
-// WaveS com Skia, permite style externo (borderRadius, position, overflow)
-function WaveS({
-  width = SCREEN_WIDTH,
-  height = 120,
-  colors = ["#ff4e02ff", "#FFD93D", "#00ff55ff"],
-  style = {},
-}) {
-  // Path em S que vai do canto inferior esquerdo ao canto superior direito
-  const x1 = width * 0.12;
-  const x2 = width * 0.28;
-  const x3 = width * 0.45;
-  const x4 = width * 0.65;
-  const x5 = width * 0.82;
+// --- Wave S separator com Skia ---
+function WaveS({ width = SCREEN_WIDTH, height = 120, colors = ["#ff4e02ff", "#FFD93D", "#00ff55ff"] }) {
+  // cria o path em S que vai do canto inferior esquerdo ao canto superior direito
+  // você pode ajustar os fatores pra mudar "intensidade" da curva
+  const x1 = width * 0.15;
+  const x2 = width * 0.25;
+  const x3 = width * 0.4;
+  const x4 = width * 0.6;
+  const x5 = width * 0.75;
 
   const path = `
     M 0 ${height}
-    C ${x1} ${height} ${x2} ${height * 0.05} ${x3} ${height * 0.25}
-    C ${x4} ${height * 0.55} ${x5} ${height * 0.0} ${width} ${height * 0.05}
+    C ${x1} ${height} ${x2} 0 ${x3} ${height * 0.2}
+    C ${x4} ${height * 0.6} ${x5} 0 ${width} 0
     L ${width} ${height}
     L 0 ${height}
     Z
   `;
 
-  // Mescla os estilos padrão com os passados via prop 'style'
-  const canvasStyle = {
-    width,
-    height,
-    borderRadius: 20,
-    overflow: "hidden",
-    ...style,
-  };
-
   return (
-    <Canvas style={canvasStyle}>
+    <Canvas style={{ width: width, height: height }}>
       <Path path={path}>
         <LinearGradient start={vec(0, 0)} end={vec(width, 0)} colors={colors} />
       </Path>
@@ -120,27 +100,23 @@ const AnimatedTextInput = Animated.createAnimatedComponent(TextInput);
 
 export const HomeScreen = () => {
   const { state, isActive } = useChartPressState({ x: 0, y: { price: 0 } });
-  const [activeBtn, setActiveBtn] = useState(0);
-  const botoes = ["1M", "3M", "6M", "1A"];
-  const navigation = useNavigation();
+  const [activeBtn, setActiveBtn] = useState(0); // controla botão ativo
 
-  // animated props - usar `.value` (shared values) dentro do worklet
   const animatedText = useAnimatedProps(() => {
-    const v = state?.y?.price?.value ?? 0;
-    // garante number
-    const n = typeof v === "number" ? v : 0;
-    return { text: `R$ ${n.toFixed(2)}` };
+    // mantenho sua lógica original (se quiser que eu troque .value.value pra .value eu faço)
+    return {
+      text: `R$ ${state.y.price.value.value.toFixed(2)}`,
+    };
   });
 
   const animatedDataText = useAnimatedProps(() => {
-    const xRaw = state?.x?.value ?? DATA[DATA.length - 1].day;
-    const d = new Date(xRaw);
-    // date string
-    return { text: `${d.toLocaleDateString("pt-BR")}` };
+    const date = new Date(state.x.value.value);
+    return {
+      text: `${date.toLocaleDateString("pt-BR")}`,
+    };
   });
 
-  // Para casos em que precisamos do valor em JS (fallback estático)
-  const lastPrice = DATA[DATA.length - 1].price;
+  const botoes = ["1M", "3M", "6M", "1A"]; // rótulos dos botões
 
   return (
     <View style={graficos.containerGra}>
@@ -162,17 +138,22 @@ export const HomeScreen = () => {
         </View>
       )}
 
-      {/* Mostrar último valor quando não pressiona */}
+      {/* Mostrar último valor mesmo sem pressionar */}
       {!isActive && (
         <View style={graficos.Values}>
-          <Text style={{ fontSize: 50, fontWeight: "bold", color: "#fffbfbff" }}>
-            R$ {lastPrice.toFixed(2)}
-          </Text>
-          <Text style={graficos.DateText}>Hoje</Text>
+          <AnimatedTextInput
+            editable={false}
+            style={{ fontSize: 50, fontWeight: "bold", color: "#fffbfbff" }}
+          >
+            R$ {DATA[DATA.length - 1].price.toFixed(2)}
+          </AnimatedTextInput>
+
+          <AnimatedTextInput editable={false}>
+            <Text style={graficos.DateText}>Hoje</Text>
+          </AnimatedTextInput>
         </View>
       )}
 
-      {/* Gráfico */}
       <View style={graficos.graficoNumberOne}>
         <CartesianChart
           data={DATA}
@@ -196,13 +177,7 @@ export const HomeScreen = () => {
                 />
               </Line>
 
-              {/* Tooltip usando posições (números) — seguro em render */}
-              {isActive && (
-                <GlowToolTip
-                  x={state.x.position ?? 0}
-                  y={state.y?.price?.position ?? 0}
-                />
-              )}
+              {isActive && <GlowToolTip x={state.x.position} y={state.y.price.position} />}
             </>
           )}
         </CartesianChart>
@@ -216,26 +191,20 @@ export const HomeScreen = () => {
             style={[graficos.boxMes, activeBtn === index && graficos.boxMesAtivo]}
             onPress={() => setActiveBtn(index)}
           >
-            <Text style={[graficos.TextMes, activeBtn === index && graficos.TextMesAtivo]}>
-              {label}
-            </Text>
+            <Text style={[graficos.TextMes, activeBtn === index && graficos.TextMesAtivo]}>{label}</Text>
           </TouchableOpacity>
         ))}
       </View>
 
-      {/* boxDash: logo em cima, onda Skia em S entre logo e botão, botão em baixo */}
+      {/* boxDash: imagem em cima, onda (Skia) e botão em baixo */}
       <View style={graficos.boxDash}>
         <Image style={graficos.imagemDash} source={require("../../../assets/logo.png")} />
 
-        {/* WaveS: passa style para controlar borderRadius/position/margins */}
-        <WaveS
-          width={SCREEN_WIDTH} // exemplo: diminui 20px margem de cada lado
-          height={155}
-          colors={["#ff4e02ff", "#FFD93D", "#00ff55ff"]}
-          style={{ position: "absolute", bottom: 0, left: 0, borderRadius: 20 }} // posiciona a onda
-        />
+        {/* onda Skia S — fica entre a logo e o botão */}
+        <WaveS 
+          style={{}} width={SCREEN_WIDTH - 45} height={140} colors={["#ff4e02ff", "#FFD93D", "#00ff55ff"]} />
 
-        <TouchableOpacity style={graficos.buttonDash} onPress={() => navigation.navigate('Welcome')}>
+        <TouchableOpacity style={graficos.buttonDash}>
           <Text style={graficos.textBtnDash}>Ver Dashboard</Text>
         </TouchableOpacity>
       </View>
