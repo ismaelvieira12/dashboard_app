@@ -19,6 +19,7 @@ import {
   vec,
 } from "@shopify/react-native-skia";
 import { StatusBar } from "expo-status-bar";
+import { useNavigation } from "@react-navigation/native";
 
 const { width: SCREEN_WIDTH } = Dimensions.get("window");
 
@@ -101,6 +102,7 @@ const AnimatedTextInput = Animated.createAnimatedComponent(TextInput);
 export const HomeScreen = () => {
   const { state, isActive } = useChartPressState({ x: 0, y: { price: 0 } });
   const [activeBtn, setActiveBtn] = useState(0); // controla botão ativo
+  const navigation = useNavigation();
 
   const animatedText = useAnimatedProps(() => {
     // mantenho sua lógica original (se quiser que eu troque .value.value pra .value eu faço)
@@ -202,9 +204,9 @@ export const HomeScreen = () => {
 
         {/* onda Skia S — fica entre a logo e o botão */}
         <WaveS 
-          style={{}} width={SCREEN_WIDTH - 45} height={140} colors={["#ff4e02ff", "#FFD93D", "#00ff55ff"]} />
+           width={SCREEN_WIDTH} height={140} colors={["#ff4e02ff", "#FFD93D", "#00ff55ff"]} />
 
-        <TouchableOpacity style={graficos.buttonDash}>
+        <TouchableOpacity style={graficos.buttonDash} onPress={() => navigation.navigate('Dashboard')}>
           <Text style={graficos.textBtnDash}>Ver Dashboard</Text>
         </TouchableOpacity>
       </View>
