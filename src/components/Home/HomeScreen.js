@@ -17,6 +17,7 @@ import {
   Path,
   LinearGradient,
   vec,
+  bottomLeft,
 } from "@shopify/react-native-skia";
 import { StatusBar } from "expo-status-bar";
 
@@ -227,10 +228,10 @@ export const HomeScreen = () => {
 
         {/* WaveS: passa style para controlar borderRadius/position/margins */}
         <WaveS
-          width={SCREEN_WIDTH - 40} // exemplo: diminui 20px margem de cada lado
-          height={100}
+          width={SCREEN_WIDTH} // exemplo: diminui 20px margem de cada lado
+          height={155}
           colors={["#ff4e02ff", "#FFD93D", "#00ff55ff"]}
-          style={{ marginTop: 12, alignSelf: "center", borderRadius: 40, overflow: "hidden" }}
+          style={{ position: "absolute", bottom: 0, left: 0 }} // posiciona a onda
         />
 
         <TouchableOpacity style={graficos.buttonDash}>
