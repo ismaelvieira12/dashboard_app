@@ -83,8 +83,8 @@ export const graficos = StyleSheet.create({
         borderRadius: 20,
     },
     imagemDash: {
-        width: 150,
-        height: 150,
+        width: 120,
+        height: 120,
         resizeMode: 'contain',
         position: "absolute",
         top: -25,

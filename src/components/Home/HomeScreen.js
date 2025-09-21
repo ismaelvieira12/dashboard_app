@@ -17,9 +17,9 @@ import {
   Path,
   LinearGradient,
   vec,
-  bottomLeft,
 } from "@shopify/react-native-skia";
 import { StatusBar } from "expo-status-bar";
+import { useNavigation } from "@react-navigation/native";
 
 const { width: SCREEN_WIDTH } = Dimensions.get("window");
 
@@ -122,6 +122,7 @@ export const HomeScreen = () => {
   const { state, isActive } = useChartPressState({ x: 0, y: { price: 0 } });
   const [activeBtn, setActiveBtn] = useState(0);
   const botoes = ["1M", "3M", "6M", "1A"];
+  const navigation = useNavigation();
 
   // animated props - usar `.value` (shared values) dentro do worklet
   const animatedText = useAnimatedProps(() => {
@@ -231,10 +232,10 @@ export const HomeScreen = () => {
           width={SCREEN_WIDTH} // exemplo: diminui 20px margem de cada lado
           height={155}
           colors={["#ff4e02ff", "#FFD93D", "#00ff55ff"]}
-          style={{ position: "absolute", bottom: 0, left: 0 }} // posiciona a onda
+          style={{ position: "absolute", bottom: 0, left: 0, borderRadius: 20 }} // posiciona a onda
         />
 
-        <TouchableOpacity style={graficos.buttonDash}>
+        <TouchableOpacity style={graficos.buttonDash} onPress={() => navigation.navigate('Welcome')}>
           <Text style={graficos.textBtnDash}>Ver Dashboard</Text>
         </TouchableOpacity>
       </View>
