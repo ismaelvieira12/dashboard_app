@@ -11,6 +11,10 @@ const data = Array.from({ length: 6 }, (_, index) => ({
 export const DashboardScreen = () => {
   return (
     <View style={Dash.container}>
+      <View style={Dash.boxInforValues}>
+        <View  style={Dash.inforValues}></View>
+        <View  style={Dash.inforValues}></View>
+      </View>
       <Text style={Dash.text}>DashboardScreen</Text>
 
       <View style={{ width: "100%", height: 300 }}>
