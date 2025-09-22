@@ -11,9 +11,20 @@ const data = Array.from({ length: 6 }, (_, index) => ({
 export const DashboardScreen = () => {
   return (
     <View style={Dash.container}>
+
       <View style={Dash.boxInforValues}>
-        <View  style={[Dash.inforValues, Dash.BoxShadow]}></View>
-        <View  style={[Dash.inforValues, Dash.BoxShadow]}></View>
+        <View  style={[Dash.inforValues, Dash.BoxShadowAndroid]}>
+          <View style={{ position: 'absolute', top: 10, left: 10 }}>
+            <Text>Avlor anual 
+              <Text>*</Text>
+            </Text>
+          </View>
+
+          <Text style={Dash.valueAnoText}>$ 29.590,67</Text>
+          <Text  style={{ position: 'absolute', bottom: 10, fontSize: 13, fontWeight:'bold', color: '#208100ff' }}>Acumulador dos Anos</Text>
+        </View>
+
+        <View  style={[Dash.inforValues, Dash.BoxShadowAndroid]}></View>
       </View>
       <Text style={Dash.text}>DashboardScreen</Text>
 
