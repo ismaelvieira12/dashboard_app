@@ -5,27 +5,27 @@ export const Dash = StyleSheet.create({
         flex: 1,
         // justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#02092fff', // Cor de fundo clara
+        backgroundColor: '#f1f1f1ff', // Cor de fundo clara
     },
     boxInforValues: {
         width: '100%',
-        height: 100,
-        backgroundColor: '#1a1830ff',
+        height: 150,
+        // backgroundColor: '#fff',
         flexDirection: 'row',
-        marginTop: 20,
+        marginTop: 40,
         justifyContent: 'space-between',
         alignItems: 'center',
         padding: 10,
     },
     inforValues: {
-        width: '45%', 
-        height: '80%',
-        backgroundColor: '#fffbfbff',
+        width: '47%', 
+        height: '90%',
+        backgroundColor: '#fff',
         borderRadius: 10,
         // Adicione mais estilos conforme necessário
     },
     text: {
         fontSize: 20,
-        color: '#fffbfbff', // Cor do texto escura
+        color: '#fff', // Cor do texto escura
     },
 })
