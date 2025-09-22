@@ -17,7 +17,6 @@ export const Dash = StyleSheet.create({
         marginTop: 40,
         justifyContent: 'space-between',
         alignItems: 'center',
-        padding: 10,
     },
     inforValues: {
         width: '47%', 
@@ -29,9 +28,9 @@ export const Dash = StyleSheet.create({
         alignItems: 'center',
     },
     valueAnoText: {
-        fontSize: 20,
+        fontSize: 23,
         fontWeight: 'bold',
-        color: '#333', // Cor do texto escura
+        color: '#0a2804ff', // Cor do texto escura
         textAlign: 'center',
     },
     // Estilo de bocshadow para IOS
