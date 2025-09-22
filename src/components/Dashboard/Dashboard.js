@@ -1,3 +1,4 @@
+
 import { StyleSheet } from 'react-native'
 export const Dash = StyleSheet.create({
 
@@ -23,6 +24,18 @@ export const Dash = StyleSheet.create({
         backgroundColor: '#fff',
         borderRadius: 10,
         // Adicione mais estilos conforme necessário
+    },
+
+    // Estilo de bocshadow para IOS
+    BoxShadow: {
+        shadowColor: '#000',
+        shadowOffset: {
+            width: 6,
+            height: 6,
+        },
+        shadowOpacity: 0.6,
+        shadowRadius: 4,
+        
     },
     text: {
         fontSize: 20,

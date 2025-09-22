@@ -12,8 +12,8 @@ export const DashboardScreen = () => {
   return (
     <View style={Dash.container}>
       <View style={Dash.boxInforValues}>
-        <View  style={Dash.inforValues}></View>
-        <View  style={Dash.inforValues}></View>
+        <View  style={[Dash.inforValues, Dash.BoxShadow]}></View>
+        <View  style={[Dash.inforValues, Dash.BoxShadow]}></View>
       </View>
       <Text style={Dash.text}>DashboardScreen</Text>
 
