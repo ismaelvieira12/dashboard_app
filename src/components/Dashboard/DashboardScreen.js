@@ -14,6 +14,26 @@ export const DashboardScreen = () => {
   return (
     <View style={Dash.container}>
       <Text style={Dash.text}>DashboardScreen</Text>
+
+      <CartesianChart
+        data={data}
+        /**
+         * 👇 the xKey should map to the property on data of you want on the x-axis
+         */
+        xKey="month"
+        /**
+         * 👇 the yKey is an array of strings that map to the data you want
+         * on the y-axis. In this case we only want the listenCount, but you could
+         * add additional if you wanted to show multiple song listen counts.
+         */
+        yKeys={["listenCount"]}>
+        {({ points, chartBounds }) => (
+          <Bar
+            chartBounds={chartBounds}  // 👈 chartBounds is needed to know how to draw the bars
+            points={points.listenCount} // 👈 points is an object with a property for each yKey
+          />
+        )}
+      </CartesianChart>
     </View>
   )
 }
