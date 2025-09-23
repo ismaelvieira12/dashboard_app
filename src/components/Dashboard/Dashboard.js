@@ -30,7 +30,7 @@ export const Dash = StyleSheet.create({
     valueAnoText: {
         fontSize: 23,
         fontWeight: 'bold',
-        color: '#0a2804ff', // Cor do texto escura
+        //color: '#0a2804ff', // Cor do texto escura
         textAlign: 'center',
     },
     // Estilo de bocshadow para IOS
