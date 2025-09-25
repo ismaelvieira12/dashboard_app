@@ -15,7 +15,7 @@ export const DashboardScreen = () => {
       <View style={Dash.boxInforValues}>
         <View  style={[Dash.inforValues, Dash.BoxShadowAndroid]}>
           <View style={{ position: 'absolute', top: 10, fontWeight:'bold', color: '#208100ff', left: 25 }}>
-            <Text  style={{ fontWeight:'bold', color: '#208100ff' }}>Avlor anual 
+            <Text  style={{ fontWeight:'bold', color: '#208100ff' }}>Avlores anuais 
             </Text>
           </View>
 
