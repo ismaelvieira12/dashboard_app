@@ -41,25 +41,26 @@ export const DashboardScreen = () => {
      
 
       {/* Gráfico de barras */}
-
-
-      <View style={{ width: "100%", height: 300 }}>
-        <CartesianChart data={data} xKey="month" yKeys={["listenCount"]}>
-          {({ points, chartBounds }) => (
-            <Bar
-              chartBounds={chartBounds}
-              points={points.listenCount}
-              barWidth={30}
-            >
-              <LinearGradient
-                start={vec(0, 0)}
-                end={vec(0, 300)} // 👈 gradiente vertical
-                colors={[ "#00ff55ff", "#FFD93D", "#ff4e02ff"]}
-              />
-            </Bar>
-          )}
-        </CartesianChart>
+      <View  style={{ width: "100%", height: 400, justifyContent: "center", alignItems: "center", marginTop: 20, backgroundColor: '#1a1830ff', borderRadius: 20, padding: 10 }}>
+        <View style={{ width: "95%", height: 300 }}>
+          <CartesianChart data={data} xKey="month" yKeys={["listenCount"]}>
+            {({ points, chartBounds }) => (
+              <Bar
+                chartBounds={chartBounds}
+                points={points.listenCount}
+                barWidth={30}
+              >
+                <LinearGradient
+                  start={vec(0, 0)}
+                  end={vec(0, 300)} // 👈 gradiente vertical
+                  colors={[ "#00ff55ff", "#FFD93D", "#ff4e02ff"]}
+                />
+              </Bar>
+            )}
+          </CartesianChart>
+        </View>
       </View>
+
 
 
     </View>
