@@ -62,7 +62,11 @@ export const DashboardScreen = () => {
       </View>
 
 
-
+      <View style={{position: "absolute", bottom: 0, height: 90, width: "110%", backgroundColor: '#1a1830ff', justifyContent: "space-around", alignItems: "center", flexDirection: "row", borderTopLeftRadius: 30, borderTopRightRadius: 30, ...Dash.BoxShadowAndroid}}>
+          <View style={{width: 80, height: 80, borderRadius: 160, backgroundColor: "#02092fff"}}></View>
+          <View style={{width: 80, height: 80, borderRadius: 160, backgroundColor: "#38ff7aff", marginBottom: 70, elevation: 15, shadowColor: "#00ff55ff"}}></View>
+          <View style={{width: 80, height: 80, borderRadius: 160, backgroundColor: "#02092fff"}}></View>
+      </View>
     </View>
   );
 };
