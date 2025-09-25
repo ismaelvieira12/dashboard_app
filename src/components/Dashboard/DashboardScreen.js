@@ -8,7 +8,7 @@ import { LinearGradient, vec } from "@shopify/react-native-skia";
 
 
 
-const data = Array.from({ length: 6 }, (_, index) => ({
+const data = Array.from({ length: 5 }, (_, index) => ({
   month: new Date(2025, index, 1).getTime(), // usar timestamp no eixo X
   listenCount: Math.floor(Math.random() * (100 - 50 + 1)) + 50,
 }));
@@ -21,7 +21,7 @@ export const DashboardScreen = () => {
       <View style={Dash.boxInforValues}>
         <View  style={[Dash.inforValues, Dash.BoxShadowAndroid]}>
           <View style={{ position: 'absolute', top: 10, left: 25 }}>
-            <Text  style={{position: "absolute", left: -15, fontWeight:'normal', backgroundColor: '#d3fec4ff', padding: 5, borderRadius: 8  }}>Avlores anuais 
+            <Text  style={{position: "absolute", left: -15, fontWeight:'normal', backgroundColor: '#d4fec4ff', padding: 5, borderRadius: 8  }}>Valores anuais 
             </Text>
           </View>
 

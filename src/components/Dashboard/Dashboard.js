@@ -21,7 +21,7 @@ export const Dash = StyleSheet.create({
     inforValues: {
         width: '47%', 
         height: '90%',
-        backgroundColor: '#ffffffff',
+        backgroundColor: '#1a1830ff',
         borderRadius: 20,
         // Adicione mais estilos conforme necessário
         justifyContent: 'center',
@@ -30,7 +30,7 @@ export const Dash = StyleSheet.create({
     valueAnoText: {
         fontSize: 23,
         fontWeight: 'bold',
-        //color: '#0a2804ff', // Cor do texto escura
+        color: '#2bff00ff', // Cor do texto escura
         textAlign: 'center',
     },
     // Estilo de bocshadow para IOS
