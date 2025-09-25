@@ -29,7 +29,7 @@ export const DashboardScreen = () => {
             </Text>
           </View>
           <Text style={Dash.valueAnoText}>$ 15.590,67</Text>
-          <Text  style={{ position: 'absolute', bottom: 10, fontSize: 13, fontWeight:'bold', color: '#208100ff' }}>Acumulador dos Anos</Text>
+          <Text  style={{ position: 'absolute', bottom: 10, fontSize: 13, fontWeight:'bold', color: '#208100ff' }}>Acumulador desse Ano</Text>
         </View>
       </View>
       <Text style={Dash.text}>DashboardScreen</Text>

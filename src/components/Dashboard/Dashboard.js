@@ -6,13 +6,13 @@ export const Dash = StyleSheet.create({
         flex: 1,
         // justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: 'rgba(228, 230, 229, 1)', // Cor de fundo clara
+        backgroundColor: '#02092fff', // Cor de fundo clara
         padding: 15,
     },
     boxInforValues: {
         width: '100%',
         height: 150,
-        // backgroundColor: '#fff',
+        // backgroundColor: '#3b3a3aff',
         flexDirection: 'row',
         marginTop: 40,
         justifyContent: 'space-between',
