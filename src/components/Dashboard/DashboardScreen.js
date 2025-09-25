@@ -3,12 +3,18 @@ import { CartesianChart, Bar } from "victory-native";
 import React from "react";
 import { Dash } from "./Dashboard";
 import { LinearGradient, vec } from "@shopify/react-native-skia";
+
+
+
+
+
 const data = Array.from({ length: 6 }, (_, index) => ({
   month: new Date(2025, index, 1).getTime(), // usar timestamp no eixo X
   listenCount: Math.floor(Math.random() * (100 - 50 + 1)) + 50,
 }));
 
 export const DashboardScreen = () => {
+
   return (
     <View style={Dash.container}>
 
@@ -32,26 +38,28 @@ export const DashboardScreen = () => {
           <Text  style={{ position: 'absolute', bottom: 10, fontSize: 13, fontWeight:'bold', color: '#208100ff' }}>Acumulador desse Ano</Text>
         </View>
       </View>
-
      
 
-<View style={{ width: "100%", height: 300 }}>
-  <CartesianChart data={data} xKey="month" yKeys={["listenCount"]}>
-    {({ points, chartBounds }) => (
-      <Bar
-        chartBounds={chartBounds}
-        points={points.listenCount}
-        barWidth={30}
-      >
-        <LinearGradient
-          start={vec(0, 0)}
-          end={vec(0, 300)} // 👈 gradiente vertical
-          colors={[ "#00ff55ff", "#FFD93D", "#ff4e02ff"]}
-        />
-      </Bar>
-    )}
-  </CartesianChart>
-</View>
+      {/* Gráfico de barras */}
+
+
+      <View style={{ width: "100%", height: 300 }}>
+        <CartesianChart data={data} xKey="month" yKeys={["listenCount"]}>
+          {({ points, chartBounds }) => (
+            <Bar
+              chartBounds={chartBounds}
+              points={points.listenCount}
+              barWidth={30}
+            >
+              <LinearGradient
+                start={vec(0, 0)}
+                end={vec(0, 300)} // 👈 gradiente vertical
+                colors={[ "#00ff55ff", "#FFD93D", "#ff4e02ff"]}
+              />
+            </Bar>
+          )}
+        </CartesianChart>
+      </View>
 
 
     </View>
