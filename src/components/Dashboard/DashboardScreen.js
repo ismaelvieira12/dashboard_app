@@ -14,8 +14,8 @@ export const DashboardScreen = () => {
 
       <View style={Dash.boxInforValues}>
         <View  style={[Dash.inforValues, Dash.BoxShadowAndroid]}>
-          <View style={{ position: 'absolute', top: 10, fontWeight:'bold', color: '#208100ff', left: 25 }}>
-            <Text  style={{ fontWeight:'bold', color: '#208100ff' }}>Avlores anuais 
+          <View style={{ position: 'absolute', top: 10, left: 25 }}>
+            <Text  style={{ fontWeight:'normal', backgroundColor: '#d3fec4ff', padding: 5, borderRadius: 8  }}>Avlores anuais 
             </Text>
           </View>
 
@@ -23,7 +23,14 @@ export const DashboardScreen = () => {
           <Text  style={{ position: 'absolute', bottom: 10, fontSize: 13, fontWeight:'bold', color: '#208100ff' }}>Acumulador dos Anos</Text>
         </View>
 
-        <View  style={[Dash.inforValues, Dash.BoxShadowAndroid]}></View>
+        <View  style={[Dash.inforValues, Dash.BoxShadowAndroid]}>
+          <View style={{ position: 'absolute', top: 10, left: 25 }}>
+            <Text  style={{ fontWeight:'normal', backgroundColor: '#d3fec4ff', padding: 5, borderRadius: 8 }}>Total atual
+            </Text>
+          </View>
+          <Text style={Dash.valueAnoText}>$ 15.590,67</Text>
+          <Text  style={{ position: 'absolute', bottom: 10, fontSize: 13, fontWeight:'bold', color: '#208100ff' }}>Acumulador dos Anos</Text>
+        </View>
       </View>
       <Text style={Dash.text}>DashboardScreen</Text>
 

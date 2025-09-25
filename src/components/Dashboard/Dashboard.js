@@ -6,7 +6,7 @@ export const Dash = StyleSheet.create({
         flex: 1,
         // justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#fdfffda4', // Cor de fundo clara
+        backgroundColor: 'rgba(228, 230, 229, 1)', // Cor de fundo clara
         padding: 15,
     },
     boxInforValues: {
