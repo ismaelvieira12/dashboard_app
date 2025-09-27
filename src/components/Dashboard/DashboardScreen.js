@@ -51,6 +51,10 @@ export const DashboardScreen = () => {
               labelColor: "#ffffff",
               gridColor: "#444444",
               axisColor: "#ffffff",
+              tickCount: 12,
+              labelFormatter: (value) => {
+                //Formatando os valores do eixo X para exibir os meses
+              }
             
             }}
           >
