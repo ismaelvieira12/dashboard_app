@@ -44,31 +44,24 @@ export const DashboardScreen = () => {
       <View  style={{ width: "100%", height: 400, justifyContent: "center", alignItems: "center", marginTop: 20, backgroundColor: '#1a1830ff', borderRadius: 20, padding: 10 }}>
         <View style={{ width: "95%", height: 300 }}>
           <CartesianChart
-            data={data} 
-            xKey="month" 
+            data={data}
+            xKey="month"
             yKeys={["listenCount"]}
             axisOptions={{
               labelColor: "#ffffff",
               gridColor: "#444444",
               axisColor: "#ffffff",
               tickCount: 12,
-              labelFormatter: (value) => {
-                //Formatando os valores do eixo X para exibir os meses
-                return new Date(value).toLocaleString('pt-BR', {month: 'short'});
-              },
-            
+              labelFormatter: (value) =>
+                new Date(value).toLocaleString("pt-BR", { month: "short" }), // 👈 nomes curtos dos meses
             }}
           >
             {({ points, chartBounds }) => (
-              <Bar
-                chartBounds={chartBounds}
-                points={points.listenCount}
-                barWidth={30}
-              >
+              <Bar chartBounds={chartBounds} points={points.listenCount} barWidth={30}>
                 <LinearGradient
                   start={vec(0, 0)}
-                  end={vec(0, 300)} // 👈 gradiente vertical
-                  colors={[ "#00ff55ff", "#FFD93D", "#ff4e02ff"]}
+                  end={vec(0, 300)}
+                  colors={["#00ff55ff", "#FFD93D", "#ff4e02ff"]}
                 />
               </Bar>
             )}
