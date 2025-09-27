@@ -54,7 +54,8 @@ export const DashboardScreen = () => {
               tickCount: 12,
               labelFormatter: (value) => {
                 //Formatando os valores do eixo X para exibir os meses
-              }
+                return new Date(value).toLocaleString('pt-BR', {month: 'short'});
+              },
             
             }}
           >
