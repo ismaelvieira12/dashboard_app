@@ -10,7 +10,7 @@ import { LinearGradient, vec } from "@shopify/react-native-skia";
 
 const data = Array.from({ length: 4 }, (_, index) => ({
   month: new Date(2025, index, 1).getTime(), // usar timestamp no eixo X
-  listenCount: Math.floor(Math.random() * (100 ** 50 + 41)) + 50,
+  listenCount: Math.floor(Math.random() * (100 - 50 + 41)) + 50,
 }));
 
 export const DashboardScreen = () => {
