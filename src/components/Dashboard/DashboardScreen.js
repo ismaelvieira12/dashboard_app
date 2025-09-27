@@ -10,7 +10,7 @@ import { LinearGradient, vec } from "@shopify/react-native-skia";
 
 const data = Array.from({ length: 4 }, (_, index) => ({
   month: new Date(2025, index, 1).getTime(), // usar timestamp no eixo X
-  listenCount: Math.floor(Math.random() * (100 - 50 + 1)) + 50,
+  listenCount: Math.floor(Math.random() * (100 ** 50 + 41)) + 50,
 }));
 
 export const DashboardScreen = () => {
@@ -43,7 +43,13 @@ export const DashboardScreen = () => {
       {/* Gráfico de barras */}
       <View  style={{ width: "100%", height: 400, justifyContent: "center", alignItems: "center", marginTop: 20, backgroundColor: '#1a1830ff', borderRadius: 20, padding: 10 }}>
         <View style={{ width: "95%", height: 300 }}>
-          <CartesianChart data={data} xKey="month" yKeys={["listenCount"]}>
+          <CartesianChart
+            data={data} 
+            xKey="month" 
+            yKeys={["listenCount"]}
+            axisOptions={
+            }
+          >
             {({ points, chartBounds }) => (
               <Bar
                 chartBounds={chartBounds}
