@@ -47,8 +47,12 @@ export const DashboardScreen = () => {
             data={data} 
             xKey="month" 
             yKeys={["listenCount"]}
-            axisOptions={
-            }
+            axisOptions={{
+              labelColor: "#ffffff",
+              gridColor: "#444444",
+              axisColor: "#ffffff",
+            
+            }}
           >
             {({ points, chartBounds }) => (
               <Bar
