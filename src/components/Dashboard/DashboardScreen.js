@@ -88,34 +88,29 @@ export const DashboardScreen = () => {
           padding: 10,
         }}
       >
-        <View style={{ width: "95%", height: 300 }}>
-  <CartesianChart
-    data={data}
-    xKey="month"
-    yKeys={["listenCount"]}
-    axisOptions={{
-      labelColor: "#ffffff",
-      gridColor: "#444444",
-      axisColor: "#ffffff",
-      tickCount: 12, // força 12 ticks
-      labelFormatter: (value) => {
-        // transforma o timestamp em nome do mês abreviado
-        return new Date(value).toLocaleString("pt-BR", { month: "short" });
-      },
-    }}
-    domain={{ x: [new Date(2025, 0, 1).getTime(), new Date(2025, 11, 1).getTime()] }} // força o range jan-dez
-  >
-    {({ points, chartBounds }) => (
-      <Bar chartBounds={chartBounds} points={points.listenCount} barWidth={20}>
-        <LinearGradient
-          start={vec(0, 0)}
-          end={vec(0, 300)}
-          colors={["#00ff55ff", "#FFD93D", "#ff4e02ff"]}
-        />
-      </Bar>
-    )}
-  </CartesianChart>
-</View>
+      < View style={{ width: "95%", height: 300 }}>
+        <CartesianChart
+          data={data}
+          xKey="month"
+          yKeys={["listenCount"]}
+          axisOptions={{
+            labelColor: "#ffffff",
+            gridColor: "#444444",
+            axisColor: "#ffffff",
+            tickCount: 12,
+          }}
+        >
+          {({ points, chartBounds }) => (
+            <Bar chartBounds={chartBounds} points={points.listenCount} barWidth={20}>
+              <LinearGradient
+                start={vec(0, 0)}
+                end={vec(0, 300)}
+                colors={["#00ff55ff", "#FFD93D", "#ff4e02ff"]}
+              />
+            </Bar>
+          )}
+        </CartesianChart>
+      </View>
 
       </View>
 
