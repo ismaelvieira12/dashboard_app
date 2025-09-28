@@ -4,76 +4,163 @@ import React from "react";
 import { Dash } from "./Dashboard";
 import { LinearGradient, vec } from "@shopify/react-native-skia";
 
-
-
-
-
-const data = Array.from({ length: 4 }, (_, index) => ({
-  month: new Date(2025, index, 1).getTime(), // usar timestamp no eixo X
-  listenCount: Math.floor(Math.random() * (100 - 50 + 41)) + 50,
+// Gera 12 meses (jan → dez) com valores aleatórios entre 50 e 100
+const data = Array.from({ length: 12 }, (_, index) => ({
+  month: new Date(2025, index, 1).getTime(), // timestamp de cada mês
+  listenCount: Math.floor(Math.random() * (100 - 50 + 1)) + 50,
 }));
 
 export const DashboardScreen = () => {
-
   return (
     <View style={Dash.container}>
-
       <View style={Dash.boxInforValues}>
-        <View  style={[Dash.inforValues, Dash.BoxShadowAndroid]}>
-          <View style={{ position: 'absolute', top: 10, left: 25 }}>
-            <Text  style={{position: "absolute", left: -15, fontWeight:'normal', backgroundColor: '#d4fec4ff', padding: 5, borderRadius: 8  }}>Valores anuais 
+        <View style={[Dash.inforValues, Dash.BoxShadowAndroid]}>
+          <View style={{ position: "absolute", top: 10, left: 25 }}>
+            <Text
+              style={{
+                position: "absolute",
+                left: -15,
+                fontWeight: "normal",
+                backgroundColor: "#d4fec4ff",
+                padding: 5,
+                borderRadius: 8,
+              }}
+            >
+              Valores anuais
             </Text>
           </View>
 
           <Text style={Dash.valueAnoText}>$ 29.590,67</Text>
-          <Text  style={{ position: 'absolute', bottom: 10, fontSize: 13, fontWeight:'bold', color: '#208100ff' }}>Acumulador dos Anos</Text>
+          <Text
+            style={{
+              position: "absolute",
+              bottom: 10,
+              fontSize: 13,
+              fontWeight: "bold",
+              color: "#208100ff",
+            }}
+          >
+            Acumulador dos Anos
+          </Text>
         </View>
 
-        <View  style={[Dash.inforValues, Dash.BoxShadowAndroid]}>
-          <View style={{ position: 'absolute', top: 10, left: 25 }}>
-            <Text  style={{position: "absolute", left: -15, fontWeight:'normal', backgroundColor: '#d4fec4ff', padding: 5, borderRadius: 8 }}>Total atual
+        <View style={[Dash.inforValues, Dash.BoxShadowAndroid]}>
+          <View style={{ position: "absolute", top: 10, left: 25 }}>
+            <Text
+              style={{
+                position: "absolute",
+                left: -15,
+                fontWeight: "normal",
+                backgroundColor: "#d4fec4ff",
+                padding: 5,
+                borderRadius: 8,
+              }}
+            >
+              Total atual
             </Text>
           </View>
           <Text style={Dash.valueAnoText}>$ 15.590,67</Text>
-          <Text  style={{ position: 'absolute', bottom: 10, fontSize: 13, fontWeight:'bold', color: '#208100ff' }}>Acumulador desse Ano</Text>
-        </View>
-      </View>
-     
-
-      {/* Gráfico de barras */}
-      <View  style={{ width: "100%", height: 400, justifyContent: "center", alignItems: "center", marginTop: 20, backgroundColor: '#1a1830ff', borderRadius: 20, padding: 10 }}>
-        <View style={{ width: "95%", height: 300 }}>
-          <CartesianChart
-            data={data}
-            xKey="month"
-            yKeys={["listenCount"]}
-            axisOptions={{
-              labelColor: "#ffffff",
-              gridColor: "#444444",
-              axisColor: "#ffffff",
-              tickCount: 12,
-              labelFormatter: (value) =>
-                new Date(value).toLocaleString("pt-BR", { month: "short" }), // 👈 nomes curtos dos meses
+          <Text
+            style={{
+              position: "absolute",
+              bottom: 10,
+              fontSize: 13,
+              fontWeight: "bold",
+              color: "#208100ff",
             }}
           >
-            {({ points, chartBounds }) => (
-              <Bar chartBounds={chartBounds} points={points.listenCount} barWidth={30}>
-                <LinearGradient
-                  start={vec(0, 0)}
-                  end={vec(0, 300)}
-                  colors={["#00ff55ff", "#FFD93D", "#ff4e02ff"]}
-                />
-              </Bar>
-            )}
-          </CartesianChart>
+            Acumulador desse Ano
+          </Text>
         </View>
       </View>
 
+      {/* Gráfico de barras */}
+      <View
+        style={{
+          width: "100%",
+          height: 400,
+          justifyContent: "center",
+          alignItems: "center",
+          marginTop: 20,
+          backgroundColor: "#1a1830ff",
+          borderRadius: 20,
+          padding: 10,
+        }}
+      >
+        <View style={{ width: "95%", height: 300 }}>
+  <CartesianChart
+    data={data}
+    xKey="month"
+    yKeys={["listenCount"]}
+    axisOptions={{
+      labelColor: "#ffffff",
+      gridColor: "#444444",
+      axisColor: "#ffffff",
+      tickCount: 12, // força 12 ticks
+      labelFormatter: (value) => {
+        // transforma o timestamp em nome do mês abreviado
+        return new Date(value).toLocaleString("pt-BR", { month: "short" });
+      },
+    }}
+    domain={{ x: [new Date(2025, 0, 1).getTime(), new Date(2025, 11, 1).getTime()] }} // força o range jan-dez
+  >
+    {({ points, chartBounds }) => (
+      <Bar chartBounds={chartBounds} points={points.listenCount} barWidth={20}>
+        <LinearGradient
+          start={vec(0, 0)}
+          end={vec(0, 300)}
+          colors={["#00ff55ff", "#FFD93D", "#ff4e02ff"]}
+        />
+      </Bar>
+    )}
+  </CartesianChart>
+</View>
 
-      <View style={{position: "absolute", bottom: 0, height: 90, width: "110%", backgroundColor: '#1a1830ff', justifyContent: "space-around", alignItems: "center", flexDirection: "row", borderTopLeftRadius: 30, borderTopRightRadius: 30, ...Dash.BoxShadowAndroid}}>
-          <View style={{width: 80, height: 80, borderRadius: 160, backgroundColor: "#02092fff"}}></View>
-          <View style={{width: 80, height: 80, borderRadius: 160, backgroundColor: "#38ff7aff", marginBottom: 70, elevation: 15, shadowColor: "#00ff55ff"}}></View>
-          <View style={{width: 80, height: 80, borderRadius: 160, backgroundColor: "#02092fff"}}></View>
+      </View>
+
+      {/* Menu inferior */}
+      <View
+        style={{
+          position: "absolute",
+          bottom: 0,
+          height: 90,
+          width: "110%",
+          backgroundColor: "#1a1830ff",
+          justifyContent: "space-around",
+          alignItems: "center",
+          flexDirection: "row",
+          borderTopLeftRadius: 30,
+          borderTopRightRadius: 30,
+          ...Dash.BoxShadowAndroid,
+        }}
+      >
+        <View
+          style={{
+            width: 80,
+            height: 80,
+            borderRadius: 160,
+            backgroundColor: "#02092fff",
+          }}
+        ></View>
+        <View
+          style={{
+            width: 80,
+            height: 80,
+            borderRadius: 160,
+            backgroundColor: "#38ff7aff",
+            marginBottom: 70,
+            elevation: 15,
+            shadowColor: "#00ff55ff",
+          }}
+        ></View>
+        <View
+          style={{
+            width: 80,
+            height: 80,
+            borderRadius: 160,
+            backgroundColor: "#02092fff",
+          }}
+        ></View>
       </View>
     </View>
   );
