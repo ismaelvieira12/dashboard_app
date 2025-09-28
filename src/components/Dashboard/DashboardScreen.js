@@ -4,9 +4,10 @@ import React from "react";
 import { Dash } from "./Dashboard";
 import { LinearGradient, vec } from "@shopify/react-native-skia";
 
-// Gera 12 meses (jan → dez) com valores aleatórios entre 50 e 100
+const meses = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"];
+
 const data = Array.from({ length: 12 }, (_, index) => ({
-  month: new Date(2025, index, 1).getTime(), // timestamp de cada mês
+  month: meses[index], // 👈 string já formatada
   listenCount: Math.floor(Math.random() * (100 - 50 + 1)) + 50,
 }));
 
