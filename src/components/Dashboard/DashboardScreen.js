@@ -4,33 +4,34 @@ import React from "react";
 import { Dash } from "./Dashboard";
 import { LinearGradient, vec } from "@shopify/react-native-skia";
 
+// Meses do ano
 const meses = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"];
 
+// Geração dos dados
 const data = Array.from({ length: 12 }, (_, index) => ({
-  month: meses[index], // 👈 string já formatada
-  listenCount: Math.floor(Math.random() * (100 - 50 + 1)) + 50,
+  month: meses[index], // 👈 agora usamos string mesmo
+  listenCount: Math.floor(Math.random() * (500 - 100 + 1)) + 100, // valores entre 100 e 500
 }));
 
 export const DashboardScreen = () => {
   return (
     <View style={Dash.container}>
+      {/* Cards de informações */}
       <View style={Dash.boxInforValues}>
         <View style={[Dash.inforValues, Dash.BoxShadowAndroid]}>
-          <View style={{ position: "absolute", top: 10, left: 25 }}>
-            <Text
-              style={{
-                position: "absolute",
-                left: -15,
-                fontWeight: "normal",
-                backgroundColor: "#d4fec4ff",
-                padding: 5,
-                borderRadius: 8,
-              }}
-            >
-              Valores anuais
-            </Text>
-          </View>
-
+          <Text
+            style={{
+              position: "absolute",
+              top: 10,
+              left: 10,
+              fontWeight: "normal",
+              backgroundColor: "#d4fec4ff",
+              padding: 5,
+              borderRadius: 8,
+            }}
+          >
+            Valores anuais
+          </Text>
           <Text style={Dash.valueAnoText}>$ 29.590,67</Text>
           <Text
             style={{
@@ -46,20 +47,19 @@ export const DashboardScreen = () => {
         </View>
 
         <View style={[Dash.inforValues, Dash.BoxShadowAndroid]}>
-          <View style={{ position: "absolute", top: 10, left: 25 }}>
-            <Text
-              style={{
-                position: "absolute",
-                left: -15,
-                fontWeight: "normal",
-                backgroundColor: "#d4fec4ff",
-                padding: 5,
-                borderRadius: 8,
-              }}
-            >
-              Total atual
-            </Text>
-          </View>
+          <Text
+            style={{
+              position: "absolute",
+              top: 10,
+              left: 10,
+              fontWeight: "normal",
+              backgroundColor: "#d4fec4ff",
+              padding: 5,
+              borderRadius: 8,
+            }}
+          >
+            Total atual
+          </Text>
           <Text style={Dash.valueAnoText}>$ 15.590,67</Text>
           <Text
             style={{
@@ -88,7 +88,7 @@ export const DashboardScreen = () => {
           padding: 10,
         }}
       >
-        < View style={{ width: "95%", height: 350 }}>
+        <View style={{ width: "95%", height: 320 }}>
           <CartesianChart
             data={data}
             xKey="month"
@@ -98,6 +98,8 @@ export const DashboardScreen = () => {
               gridColor: "#444444",
               axisColor: "#ffffff",
               tickCount: 12,
+              // 👇 Agora força exibir o texto da propriedade month
+              labelFormatter: (value) => value,
             }}
           >
             {({ points, chartBounds }) => (
@@ -111,7 +113,6 @@ export const DashboardScreen = () => {
             )}
           </CartesianChart>
         </View>
-
       </View>
 
       {/* Menu inferior */}
@@ -130,14 +131,7 @@ export const DashboardScreen = () => {
           ...Dash.BoxShadowAndroid,
         }}
       >
-        <View
-          style={{
-            width: 80,
-            height: 80,
-            borderRadius: 160,
-            backgroundColor: "#02092fff",
-          }}
-        ></View>
+        <View style={{ width: 80, height: 80, borderRadius: 160, backgroundColor: "#02092fff" }} />
         <View
           style={{
             width: 80,
@@ -148,15 +142,8 @@ export const DashboardScreen = () => {
             elevation: 15,
             shadowColor: "#00ff55ff",
           }}
-        ></View>
-        <View
-          style={{
-            width: 80,
-            height: 80,
-            borderRadius: 160,
-            backgroundColor: "#02092fff",
-          }}
-        ></View>
+        />
+        <View style={{ width: 80, height: 80, borderRadius: 160, backgroundColor: "#02092fff" }} />
       </View>
     </View>
   );
