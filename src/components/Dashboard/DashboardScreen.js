@@ -148,3 +148,9 @@ export const DashboardScreen = () => {
     </View>
   );
 };
+// import { View, Text, TouchableOpacity, ImageBackground, Image } from 'react-native';
+// import React from 'react';
+// import { styles } from '../Welcome/Welcome';
+// import { StatusBar } from 'expo-status-bar';
+// import { useFonts } from "expo-font";
+// import { useNavigation } from '@react-navigation/native';
