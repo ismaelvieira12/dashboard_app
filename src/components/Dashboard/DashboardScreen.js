@@ -88,29 +88,29 @@ export const DashboardScreen = () => {
           padding: 10,
         }}
       >
-      < View style={{ width: "95%", height: 300 }}>
-        <CartesianChart
-          data={data}
-          xKey="month"
-          yKeys={["listenCount"]}
-          axisOptions={{
-            labelColor: "#ffffff",
-            gridColor: "#444444",
-            axisColor: "#ffffff",
-            tickCount: 12,
-          }}
-        >
-          {({ points, chartBounds }) => (
-            <Bar chartBounds={chartBounds} points={points.listenCount} barWidth={20}>
-              <LinearGradient
-                start={vec(0, 0)}
-                end={vec(0, 300)}
-                colors={["#00ff55ff", "#FFD93D", "#ff4e02ff"]}
-              />
-            </Bar>
-          )}
-        </CartesianChart>
-      </View>
+        < View style={{ width: "95%", height: 350 }}>
+          <CartesianChart
+            data={data}
+            xKey="month"
+            yKeys={["listenCount"]}
+            axisOptions={{
+              labelColor: "#ffffff",
+              gridColor: "#444444",
+              axisColor: "#ffffff",
+              tickCount: 12,
+            }}
+          >
+            {({ points, chartBounds }) => (
+              <Bar chartBounds={chartBounds} points={points.listenCount} barWidth={20}>
+                <LinearGradient
+                  start={vec(0, 0)}
+                  end={vec(0, 300)}
+                  colors={["#00ff55ff", "#FFD93D", "#ff4e02ff"]}
+                />
+              </Bar>
+            )}
+          </CartesianChart>
+        </View>
 
       </View>
 
