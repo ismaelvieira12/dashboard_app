@@ -131,7 +131,7 @@ export const DashboardScreen = () => {
           ...Dash.BoxShadowAndroid,
         }}
       >
-        <View style={{ width: 80, height: 80, borderRadius: 160, backgroundColor: "#02092fff" }} />
+      <View style={{ width: 80, height: 80, borderRadius: 160, backgroundColor: "#02092fff" }} />
         <View
           style={{
             width: 80,
