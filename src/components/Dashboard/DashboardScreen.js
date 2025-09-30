@@ -94,6 +94,7 @@ export const DashboardScreen = () => {
             domain={{ y: [0, 600] }}  
             padding={{ left: 50, bottom: 50, right: 20, top: 20 }}
           >
+            
             <Bar 
               data={data}
               x="month"
