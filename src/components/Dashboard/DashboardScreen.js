@@ -90,7 +90,17 @@ export const DashboardScreen = () => {
         }}
       >
         <View style={{ width: "95%", height: 320 }}>
-         
+          <CartesianChart data={DATA} xKey="x" yKeys={["y"]}>
+            {({ points, chartBounds }) => (
+              //👇 pass a PointsArray to the Bar component, as well as options.
+              <Bar
+                points={points.y}
+                chartBounds={chartBounds}
+                color="red"
+                roundedCorners={{ topLeft: 10, topRight: 10 }}
+              />
+            )}
+        </CartesianChart>
         </View>
       </View>
 
