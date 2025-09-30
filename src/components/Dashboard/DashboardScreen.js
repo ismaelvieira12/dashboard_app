@@ -89,7 +89,27 @@ export const DashboardScreen = () => {
         }}
       >
         <View style={{ width: "95%", height: 320 }}>
-         
+          <CartesianChart
+            style={{ flex: 1 }}
+            domain={{ y: [0, 600] }}  
+            padding={{ left: 50, bottom: 50, right: 20, top: 20 }}
+          >
+            <Bar 
+              data={data}
+              x="month"
+              y="listenCount"
+              barWidth={20}
+              style={{
+                data: { fill: "url(#gradient)" },
+              }}
+            />  
+            <LinearGradient
+              id="gradient"
+              start={vec(0, 0)}
+              end={vec(0, 300)}
+              colors={["#00ff55ff", "#02092fff"]}
+            />
+          </CartesianChart> 
         </View>
       </View>
 
