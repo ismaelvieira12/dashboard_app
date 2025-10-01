@@ -98,7 +98,7 @@ export const DashboardScreen = () => {
               gridColor: "#444444",
               axisColor: "#ffffff",
               tickCount: 12,
-              // 👇 Agora força exibir o texto da propriedade month
+              
               labelFormatter: (value) => value,
             }}
           >
