@@ -84,7 +84,7 @@ export const DashboardScreen = () => {
           alignItems: "center",
           marginTop: 20,
           // backgroundColor: "#1a1830ff",
-          backgroundColor: "#ffffffff",
+          backgroundColor: "#3b3a3aff",
           borderRadius: 20,
           padding: 10,
         }}
