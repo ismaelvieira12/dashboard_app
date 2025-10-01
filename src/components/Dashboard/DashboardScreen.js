@@ -83,7 +83,8 @@ export const DashboardScreen = () => {
           justifyContent: "center",
           alignItems: "center",
           marginTop: 20,
-          backgroundColor: "#1a1830ff",
+          // backgroundColor: "#1a1830ff",
+          backgroundColor: "#ffffffff",
           borderRadius: 20,
           padding: 10,
         }}
