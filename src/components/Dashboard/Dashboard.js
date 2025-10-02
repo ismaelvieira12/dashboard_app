@@ -7,7 +7,7 @@ export const Dash = StyleSheet.create({
         // justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#02092fff', // Cor de fundo clara
-        padding: 15,
+        // padding: 15,
     },
     boxInforValues: {
         width: '100%',
@@ -53,5 +53,17 @@ export const Dash = StyleSheet.create({
     text: {
         fontSize: 20,
         color: '#fff', // Cor do texto escura
+    },
+    boxGraphico: {
+        width: '100%',
+        height: 400,   
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: 20,
+        backgroundColor: '#3b3a3aff',
+        borderRadius: 20,
+        padding: 10,
+        position:"absolute", 
+        bottom:90 
     },
 })
