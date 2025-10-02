@@ -79,7 +79,7 @@ export const DashboardScreen = () => {
       <View
         style={{
           width: "100%",
-          height: 400,
+          height: "80%",
           justifyContent: "center",
           alignItems: "center",
           marginTop: 20,
