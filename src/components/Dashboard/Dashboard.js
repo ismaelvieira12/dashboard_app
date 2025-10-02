@@ -7,11 +7,13 @@ export const Dash = StyleSheet.create({
         // justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#02092fff', // Cor de fundo clara
-        // padding: 15,
+        height: '100%',
+        position: 'relative',
     },
     boxInforValues: {
         width: '100%',
         height: 150,
+        padding: 15,
         // backgroundColor: '#3b3a3aff',
         flexDirection: 'row',
         marginTop: 40,
@@ -64,6 +66,6 @@ export const Dash = StyleSheet.create({
         borderRadius: 20,
         padding: 10,
         position:"absolute", 
-        bottom:90 
+        bottom:0 
     },
 })
