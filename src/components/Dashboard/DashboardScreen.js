@@ -79,14 +79,14 @@ export const DashboardScreen = () => {
       <View
         style={{
           width: "100%",
-          height: "80%",
+          height: "60%",
           justifyContent: "center",
           alignItems: "center",
-          marginTop: 20,
+          // marginTop: 20,
           // backgroundColor: "#1a1830ff",
           backgroundColor: "#3b3a3aff",
           borderRadius: 20,
-          padding: 10,
+          // padding: 10,
           position:"absolute", 
           bottom:90 
         }}
