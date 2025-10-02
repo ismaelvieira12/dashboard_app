@@ -7,7 +7,7 @@ export const Dash = StyleSheet.create({
         // justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#02092fff', // Cor de fundo clara
-        // padding: 15,
+        padding: 15,
     },
     boxInforValues: {
         width: '100%',
