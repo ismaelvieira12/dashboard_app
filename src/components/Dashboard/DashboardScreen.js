@@ -75,20 +75,7 @@ export const DashboardScreen = () => {
         </View>
       </View>
 
-      {/* Gráfico de barras */}
-      <View
-        style={{
-          width: "100%",
-          height: 400,
-          justifyContent: "center",
-          alignItems: "center",
-          marginTop: 20,
-          // backgroundColor: "#1a1830ff",
-          backgroundColor: "#3b3a3aff",
-          borderRadius: 20,
-          padding: 10,
-        }}
-      >
+      
         <View style={{ width: "95%", height: 320}}>
           <CartesianChart
             data={data}
