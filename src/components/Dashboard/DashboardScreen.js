@@ -87,9 +87,11 @@ export const DashboardScreen = () => {
           backgroundColor: "#3b3a3aff",
           borderRadius: 20,
           padding: 10,
+          position:"absolute", 
+          bottom:90 
         }}
       >
-        <View style={{ width: "95%", height: 320 }}>
+        <View style={{ width: "95%", height: 320}}>
           <CartesianChart
             data={data}
             xKey="month"
