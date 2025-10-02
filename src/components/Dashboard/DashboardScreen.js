@@ -76,62 +76,7 @@ export const DashboardScreen = () => {
       </View>
 
       
-        <View style={{ width: "95%", height: 320}}>
-          <CartesianChart
-            data={data}
-            xKey="month"
-            yKeys={["listenCount"]}
-            axisOptions={{
-              labelColor: "#ffffff",
-              gridColor: "#444444",
-              axisColor: "#ffffff",
-              tickCount: 12,
-              
-              labelFormatter: (value) => value,
-            }}
-          >
-            {({ points, chartBounds }) => (
-              <Bar chartBounds={chartBounds} points={points.listenCount} barWidth={20}>
-                <LinearGradient
-                  start={vec(0, 0)}
-                  end={vec(0, 300)}
-                  colors={["#00ff55ff", "#FFD93D", "#ff4e02ff"]}
-                />
-              </Bar>
-            )}
-          </CartesianChart>
-        </View>
-      </View>
-
-      {/* Menu inferior */}
-      <View
-        style={{
-          position: "absolute",
-          bottom: 0,
-          height: 90,
-          width: "110%",
-          backgroundColor: "#1a1830ff",
-          justifyContent: "space-around",
-          alignItems: "center",
-          flexDirection: "row",
-          borderTopLeftRadius: 30,
-          borderTopRightRadius: 30,
-          ...Dash.BoxShadowAndroid,
-        }}
-      >
-      <View style={{ width: 80, height: 80, borderRadius: 160, backgroundColor: "#02092fff" }} />
-        <View
-          style={{
-            width: 80,
-            height: 80,
-            borderRadius: 160,
-            backgroundColor: "#38ff7aff",
-            marginBottom: 70,
-            elevation: 15,
-            shadowColor: "#00ff55ff",
-          }}
-        />
-        <View style={{ width: 80, height: 80, borderRadius: 160, backgroundColor: "#02092fff" }} />
+       
       </View>
     </View>
   );
