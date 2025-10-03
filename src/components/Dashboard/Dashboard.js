@@ -23,7 +23,7 @@ export const Dash = StyleSheet.create({
     inforValues: {
         width: '47%', 
         height: '90%',
-        backgroundColor: '#1a1830ff',
+        backgroundColor: '#211f3cff',
         borderRadius: 20,
         // Adicione mais estilos conforme necessário
         justifyContent: 'center',
@@ -58,12 +58,13 @@ export const Dash = StyleSheet.create({
     },
     boxGraphico: {
         width: '100%',
-        height: 400,   
+        height: '80%',
         justifyContent: 'center',
         alignItems: 'center',
         marginTop: 20,
-        backgroundColor: '#3b3a3aff',
-        borderRadius: 20,
+        backgroundColor: '#211f3cff',
+        borderTopLeftRadius: 50,
+        borderTopRightRadius: 50,
         padding: 10,
         position:"absolute", 
         bottom:0 
