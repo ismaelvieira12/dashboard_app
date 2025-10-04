@@ -7,6 +7,7 @@ export const Dash = StyleSheet.create({
         // justifyContent: 'center',
         alignItems: 'center',
         // backgroundColor: '#02092fff', // Cor de fundo clara
+        backgroundColor: '#eceeecff', // Cor de fundo clara
         height: '100%',
         position: 'relative',
     },
