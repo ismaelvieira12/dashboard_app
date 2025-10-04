@@ -67,7 +67,7 @@ export const DashboardScreen = () => {
               bottom: 10,
               fontSize: 13,
               fontWeight: "bold",
-              color: "#208100ff",
+              color: "#243f2fff",
             }}
           >
             Acumulador desse Ano
