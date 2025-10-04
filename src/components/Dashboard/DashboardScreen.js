@@ -4,6 +4,8 @@ import React from "react";
 import { Dash } from "./Dashboard";
 import { LinearGradient, vec } from "@shopify/react-native-skia";
 
+import { CartesianChart, Area } from "victory-native";
+import DATA from "./my-data";
 // Meses do ano
 const meses = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"];
 

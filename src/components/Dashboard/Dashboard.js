@@ -66,8 +66,8 @@ export const Dash = StyleSheet.create({
         alignItems: 'center',
         marginTop: 20,
         backgroundColor: '#211f3cff',
-        borderTopLeftRadius: 200,
-        borderTopRightRadius: 200,
+        borderTopLeftRadius: 100,
+        borderTopRightRadius: 100,
         padding: 10,
         position:"absolute", 
         bottom:0 
