@@ -14,15 +14,15 @@ export const Dash = StyleSheet.create({
     boxInforValues: {
         width: '100%',
         height: 150,
-        padding: 15,
-        // backgroundColor: '#3b3a3aff',
+        padding: 10,
+        backgroundColor: '#3b3a3aff',
         flexDirection: 'row',
         marginTop: 40,
         justifyContent: 'space-between',
         alignItems: 'center',
     },
     inforValues: {
-        width: '47%', 
+        width: '48%', 
         height: '90%',
         backgroundColor: '#ffffffff',
         borderRadius: 20,
@@ -35,6 +35,7 @@ export const Dash = StyleSheet.create({
         fontWeight: 'bold',
         color: '#243f2fff', // Cor do texto escura
         textAlign: 'center',
+        marginTop: 10,
     },
     // Estilo de bocshadow para IOS
     BoxShadow: {
