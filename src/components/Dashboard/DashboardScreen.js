@@ -4,10 +4,8 @@ import React from "react";
 import { Dash } from "./Dashboard";
 import { LinearGradient, vec } from "@shopify/react-native-skia";
 
-import { CartesianChart, Area } from "victory-native";
-import DATA from "./my-data";
 // Meses do ano
-// const meses = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"];
+const meses = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"];
 
 // Geração dos dados
 const data = Array.from({ length: 12 }, (_, index) => ({
@@ -69,7 +67,7 @@ export const DashboardScreen = () => {
               bottom: 10,
               fontSize: 13,
               fontWeight: "bold",
-              color: "#243f2fff",
+              color: "#208100ff",
             }}
           >
             Acumulador desse Ano
