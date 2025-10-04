@@ -24,7 +24,7 @@ export const Dash = StyleSheet.create({
     inforValues: {
         width: '47%', 
         height: '90%',
-        backgroundColor: '#211f3cff',
+        backgroundColor: '#2bff00ff',
         borderRadius: 20,
         // Adicione mais estilos conforme necessário
         justifyContent: 'center',
