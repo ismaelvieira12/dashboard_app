@@ -7,7 +7,7 @@ import { LinearGradient, vec } from "@shopify/react-native-skia";
 import { CartesianChart, Area } from "victory-native";
 import DATA from "./my-data";
 // Meses do ano
-const meses = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"];
+// const meses = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"];
 
 // Geração dos dados
 const data = Array.from({ length: 12 }, (_, index) => ({
