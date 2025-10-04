@@ -25,7 +25,7 @@ export const DashboardScreen = () => {
               top: 10,
               left: 10,
               fontWeight: "normal",
-              backgroundColor: "#d4fec4ff",
+              backgroundColor: "#243f2f3c",
               padding: 5,
               borderRadius: 8,
             }}
@@ -39,7 +39,7 @@ export const DashboardScreen = () => {
               bottom: 10,
               fontSize: 13,
               fontWeight: "bold",
-              color: "#208100ff",
+              color: "#243f2fff",
             }}
           >
             Acumulador dos Anos
@@ -53,7 +53,7 @@ export const DashboardScreen = () => {
               top: 10,
               left: 10,
               fontWeight: "normal",
-              backgroundColor: "#d4fec4ff",
+              backgroundColor: "#243f2f3c",
               padding: 5,
               borderRadius: 8,
             }}
