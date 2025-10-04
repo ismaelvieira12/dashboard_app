@@ -58,7 +58,7 @@ export const Dash = StyleSheet.create({
     },
     boxGraphico: {
         width: '100%',
-        height: '80%',
+        height: '60%',
         justifyContent: 'center',
         alignItems: 'center',
         marginTop: 20,
