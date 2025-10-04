@@ -7,7 +7,7 @@ export const Dash = StyleSheet.create({
         // justifyContent: 'center',
         alignItems: 'center',
         // backgroundColor: '#02092fff', // Cor de fundo clara
-        backgroundColor: '#eceeecff', // Cor de fundo clara
+        backgroundColor: '#e4e8e4ff', // Cor de fundo clara
         height: '100%',
         position: 'relative',
     },
@@ -24,7 +24,7 @@ export const Dash = StyleSheet.create({
     inforValues: {
         width: '47%', 
         height: '90%',
-        backgroundColor: '#2bff00ff',
+        backgroundColor: '#ffffffff',
         borderRadius: 20,
         // Adicione mais estilos conforme necessário
         justifyContent: 'center',
@@ -33,7 +33,7 @@ export const Dash = StyleSheet.create({
     valueAnoText: {
         fontSize: 23,
         fontWeight: 'bold',
-        color: '#2bff00ff', // Cor do texto escura
+        color: '#243f2fff', // Cor do texto escura
         textAlign: 'center',
     },
     // Estilo de bocshadow para IOS
