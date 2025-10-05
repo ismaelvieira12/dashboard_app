@@ -75,6 +75,7 @@ export const DashboardScreen = () => {
           </Text>
         </View>
       </View>
+      {/* Gráfico de barras */}
       <View style={Dash.boxGraphico}></View>
     </View>
   );
