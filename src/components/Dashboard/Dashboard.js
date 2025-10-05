@@ -61,7 +61,7 @@ export const Dash = StyleSheet.create({
     },
     boxGraphico: {
         width: '100%',
-        height: '30%',
+        height: '10%',
         justifyContent: 'center',
         alignItems: 'center',
         marginTop: 20,
@@ -73,7 +73,7 @@ export const Dash = StyleSheet.create({
         bottom: 0 
     },
     graficoOne: {
-        width: '90%',
+        width: '94%',
         height: '40%',
         backgroundColor: '#ffffffff',
         borderRadius: 20,
