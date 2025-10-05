@@ -34,13 +34,13 @@ export const Dash = StyleSheet.create({
     valueAnoText: {
         fontSize: 23,
         fontWeight: 'bold',
-        color: '#243f2fff', // Cor do texto escura
+        color: '#211f3cff', // Cor do texto escura
         textAlign: 'center',
         marginTop: 10,
     },
     // Estilo de bocshadow para IOS
     BoxShadow: {
-        shadowColor: '#000',
+        shadowColor: '#211f3cff',
         shadowOffset: {
             width: 6,
             height: 6,
@@ -52,7 +52,7 @@ export const Dash = StyleSheet.create({
 
     // Estilo de boxShadow para Android
     BoxShadowAndroid: {
-        shadowColor: '#243f2fff',
+        shadowColor: '#211f3cff',
         elevation: 8,
     },
     text: {
@@ -66,8 +66,8 @@ export const Dash = StyleSheet.create({
         alignItems: 'center',
         marginTop: 20,
         backgroundColor: '#211f3cff',
-        borderTopLeftRadius: 100,
-        borderTopRightRadius: 100,
+        borderTopLeftRadius: 30,
+        borderTopRightRadius: 30,
         padding: 10,
         position:"absolute", 
         bottom:0 
