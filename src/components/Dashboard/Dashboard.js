@@ -81,6 +81,7 @@ export const Dash = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         marginBottom: 20,
-        marginRight: 20,
+        marginRight: 15,
+        marginLeft: 10,
     },
 })
