@@ -28,6 +28,7 @@ export const DashboardScreen = () => {
               backgroundColor: "#211f3cff",
               padding: 5,
               borderRadius: 8,
+              color: "#fff",
             }}
           >
             Valores anuais
@@ -76,6 +77,7 @@ export const DashboardScreen = () => {
         </View>
       </View>
       {/* Gráfico de barras */}
+
       <View style={Dash.boxGraphico}></View>
     </View>
   );
