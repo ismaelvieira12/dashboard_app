@@ -56,6 +56,7 @@ export const DashboardScreen = () => {
               backgroundColor: "#211f3cff",
               padding: 5,
               borderRadius: 8,
+              color: "#fff",
             }}
           >
             Total atual
