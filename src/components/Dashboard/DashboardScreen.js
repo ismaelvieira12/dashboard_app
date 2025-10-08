@@ -56,7 +56,7 @@ export const DashboardScreen = () => {
               fontWeight: "normal",
               backgroundColor: "#211f3cff",
               padding: 5,
-              
+              borderRadius: 8,
               color: "#fff",
             }}
           >
