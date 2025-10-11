@@ -89,6 +89,7 @@ export const DashboardScreen = () => {
             labelColor: "#aaa",
             gridColor: "#222",
           }}
+
         >
           {({ points, chartBounds }) => (
             <>
