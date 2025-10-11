@@ -78,10 +78,9 @@ export const Dash = StyleSheet.create({
         backgroundColor: '#ffffffff',
         borderRadius: 20,
         // Adicione mais estilos conforme necessário
-        justifyContent: 'center',
-        alignItems: 'center',
         marginBottom: 20,
         marginRight: 15,
         marginLeft: 12,
+        
     },
 })

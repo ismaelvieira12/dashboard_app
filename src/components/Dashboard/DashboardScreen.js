@@ -1,5 +1,7 @@
-import { Text, View } from "react-native";
 import React from "react";
+import { View, Text } from "react-native";
+import { CartesianChart, Bar } from "victory-native"; // mesma lib do exemplo anterior
+import { LinearGradient, vec } from "@shopify/react-native-skia"; // mesmo estilo de gradiente
 import { Dash } from "./Dashboard";
 
 
@@ -77,7 +79,34 @@ export const DashboardScreen = () => {
       </View>
       {/* Gráfico de barras */}
       <View style={Dash.graficoOne} >
-            {/* Grafico de barras aqui */}
+        <CartesianChart
+          data={data}
+          xKey="month"
+          yKeys={["listenCount"]}
+          domainPadding={{ left: 10, right: 10, top: 10, bottom: 10 }}
+          axisOptions={{
+            tickCount: 6,
+            labelColor: "#aaa",
+            gridColor: "#222",
+          }}
+        >
+          {({ points, chartBounds }) => (
+            <>
+              <Bar
+                points={points.listenCount}
+                chartBounds={chartBounds}
+                barWidth={14}
+                roundedCorners={{ topLeft: 8, topRight: 8 }}
+              >
+                <LinearGradient
+                  start={vec(0, 0)}
+                  end={vec(0, 200)}
+                  colors={["#ff4e02ff", "#FFD93D", "#00ff55ff"]}
+                />
+              </Bar>
+            </>
+          )}
+        </CartesianChart>
       </View>
       <View style={Dash.boxGraphico}></View>
     </View>
