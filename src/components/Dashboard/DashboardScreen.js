@@ -90,10 +90,11 @@ export const DashboardScreen = () => {
         ]}
       >
         <CartesianChart
+          
           data={data}
-          xKey="year"
+          x5Key="year"
           yKeys={["value"]}
-          domainPadding={{ left: 50, right: 50, top: 20, bottom: 20 }}
+          domainPadding={{ left: 70, right: 70, top: 20, bottom: 20 }}
           axisOptions={{
             tickCount: 4,
             labelColor: "#fff", // 👈 cor das labels (agora aparece)
