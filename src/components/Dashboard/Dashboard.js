@@ -4,10 +4,9 @@ export const Dash = StyleSheet.create({
 
     container: {
         flex: 1,
-        // justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#02092fff', // Cor de fundo clara
-        // backgroundColor: '#e9eae9ff', // Cor de fundo clara
+        // backgroundColor: '#02092fff', // Cor de fundo clara
+        backgroundColor: '#e9eae9ff', // Cor de fundo clara
         height: '100%',
         position: 'relative',
     },
