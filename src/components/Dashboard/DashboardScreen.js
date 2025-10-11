@@ -85,9 +85,14 @@ export const DashboardScreen = () => {
           yKeys={["listenCount"]}
           domainPadding={{ left: 10, right: 10, top: 10, bottom: 10 }}
           axisOptions={{
-            tickCount: 6,
-            labelColor: "#aaa",
-            gridColor: "#222",
+            tickCount: 0,
+            // labelColor: "#e51e1eff",
+            // gridColor: "#b81616ff",
+            lineColor: "transparent", // 👈 tira a linha do eixo (sem moldura)
+          }}
+          chartStyle={{
+            backgroundColor: "transparent", // 👈 sem fundo no gráfico
+            borderWidth: 0, // 👈 remove qualquer borda
           }}
 
         >
@@ -101,8 +106,8 @@ export const DashboardScreen = () => {
               >
                 <LinearGradient
                   start={vec(0, 0)}
-                  end={vec(0, 200)}
-                  colors={["#ff4e02ff", "#FFD93D", "#00ff55ff"]}
+                  end={vec(0, 300)}
+                  colors={["#ff4e02ff", "#FFD93D"]}
                 />
               </Bar>
             </>
