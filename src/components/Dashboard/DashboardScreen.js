@@ -1,17 +1,16 @@
 import React from "react";
 import { View, Text } from "react-native";
-import { CartesianChart, Bar } from "victory-native"; // mesma lib do exemplo anterior
-import { LinearGradient, vec } from "@shopify/react-native-skia"; // mesmo estilo de gradiente
+import { CartesianChart, Bar } from "victory-native";
+import { LinearGradient, vec } from "@shopify/react-native-skia";
 import { Dash } from "./Dashboard";
 
+// Anos que queremos exibir
+const anos = ["2022", "2023", "2024", "2025"];
 
-// Meses do ano
-const meses = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"];
-
-// Geração dos dados
-const data = Array.from({ length: 12 }, (_, index) => ({
-  month: meses[index], // 👈 agora usamos string mesmo
-  listenCount: Math.floor(Math.random() * (500 - 100 + 1)) + 100, // valores entre 100 e 500
+// Dados (4 colunas)
+const data = anos.map((ano) => ({
+  year: ano,
+  value: Math.floor(Math.random() * (5000 - 1000 + 1)) + 1000, // valores aleatórios
 }));
 
 export const DashboardScreen = () => {
@@ -77,42 +76,52 @@ export const DashboardScreen = () => {
           </Text>
         </View>
       </View>
+
       {/* Gráfico de barras */}
-      <View style={Dash.graficoOne} >
+      <View
+        style={[
+          Dash.graficoOne,
+          {
+            // backgroundColor: "transparent",
+            borderWidth: 0,
+            overflow: "hidden", // 👈 tudo que sair do fundo fica invisível
+            paddingBottom: 30,
+          },
+        ]}
+      >
         <CartesianChart
           data={data}
-          xKey="month"
-          yKeys={["listenCount"]}
+          xKey="year"
+          yKeys={["value"]}
           domainPadding={{ left: 20, right: 20, top: 20, bottom: 20 }}
           axisOptions={{
-            tickCount: 0,
-            // labelColor: "#e51e1eff",
-            // gridColor: "#b81616ff",
-            lineColor: "transparent", // 👈 tira a linha do eixo (sem moldura)
+            tickCount: 4,
+            labelColor: "#fff", // 👈 cor das labels (agora aparece)
+            gridColor: "transparent",
+            lineColor: "transparent",
           }}
           chartStyle={{
-            backgroundColor: "transparent", // 👈 sem fundo no gráfico
-            borderWidth: 0, // 👈 remove qualquer borda
+            backgroundColor: "transparent",
+            borderWidth: 0,
           }}
         >
           {({ points, chartBounds }) => (
-            <>
-              <Bar
-                points={points.listenCount}
-                chartBounds={chartBounds}
-                barWidth={14}
-                roundedCorners={{ topLeft: 8, topRight: 8 }}
-              >
-                <LinearGradient
-                  start={vec(0, 0)}
-                  end={vec(0, 300)}
-                  colors={["#ff4e02ff", "#FFD93D"]}
-                />
-              </Bar>
-            </>
+            <Bar
+              points={points.value}
+              chartBounds={chartBounds}
+              barWidth={35}
+              roundedCorners={{ topLeft: 8, topRight: 8 }}
+            >
+              <LinearGradient
+                start={vec(0, 0)}
+                end={vec(0, 200)}
+                colors={["#ff4e02ff", "#FFD93D"]}
+              />
+            </Bar>
           )}
         </CartesianChart>
       </View>
+
       <View style={Dash.boxGraphico}></View>
     </View>
   );
