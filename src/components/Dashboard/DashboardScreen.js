@@ -104,8 +104,6 @@ export const DashboardScreen = () => {
             backgroundColor: "transparent",
             borderWidth: 0,
           }}
-          height={200}
-          width={"100%"}
         >
           {({ points, chartBounds }) => (
             <Bar
