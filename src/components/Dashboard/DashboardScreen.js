@@ -79,23 +79,19 @@ export const DashboardScreen = () => {
       </View>
       {/* Gráfico de barras */}
       <View style={Dash.graficoOne} >
-        <CartesianChart
-          data={data}
-          xKey="month"
+       <CartesianChart
+          data={data.map((d, i) => ({ ...d, index: i }))} // adiciona índice numérico
+          xKey="index"
           yKeys={["listenCount"]}
           domainPadding={{ left: 10, right: 10, top: 10, bottom: 10 }}
           axisOptions={{
-            tickCount: 0,
-            // labelColor: "#e51e1eff",
-            // gridColor: "#b81616ff",
-            lineColor: "transparent", // 👈 tira a linha do eixo (sem moldura)
+            labelColor: "#aaa",
+            gridColor: "transparent",
+            lineColor: "transparent",
+            tickCount: 12,
+            labelFormatter: (value) => meses[value] || "", // 👈 mostra o nome do mês
           }}
-          chartStyle={{
-            backgroundColor: "transparent", // 👈 sem fundo no gráfico
-            borderWidth: 0, // 👈 remove qualquer borda
-          }}
-
-        >
+      > 
           {({ points, chartBounds }) => (
             <>
               <Bar
