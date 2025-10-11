@@ -93,7 +93,7 @@ export const DashboardScreen = () => {
           data={data}
           xKey="year"
           yKeys={["value"]}
-          domainPadding={{ left: 20, right: 20, top: 20, bottom: 20 }}
+          domainPadding={{ left: 50, right: 50, top: 20, bottom: 20 }}
           axisOptions={{
             tickCount: 4,
             labelColor: "#fff", // 👈 cor das labels (agora aparece)
@@ -104,12 +104,14 @@ export const DashboardScreen = () => {
             backgroundColor: "transparent",
             borderWidth: 0,
           }}
+          height={200}
+          width={"100%"}
         >
           {({ points, chartBounds }) => (
             <Bar
               points={points.value}
               chartBounds={chartBounds}
-              barWidth={35}
+              barWidth={65}
               roundedCorners={{ topLeft: 8, topRight: 8 }}
             >
               <LinearGradient

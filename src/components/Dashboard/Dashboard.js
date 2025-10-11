@@ -81,6 +81,6 @@ export const Dash = StyleSheet.create({
         marginBottom: 20,
         marginRight: 15,
         marginLeft: 12,
-        padding: 10,
+        // padding: 10,
     },
 })
